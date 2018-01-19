@@ -10,15 +10,15 @@ import android.view.ViewGroup;
 import com.erzu.quarter.R;
 
 /**
- * 推荐页面
+ * 趣图页面
  * Created by hp on 2018/1/19.
  */
 
-public class RecommendFragment extends Fragment {
+public class OddphotosFragment extends Fragment {
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.fragment_recommend, null);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = View.inflate(getActivity(), R.layout.fragment_oddphotos, null);
         return view;
     }
 }

@@ -10,15 +10,15 @@ import android.view.ViewGroup;
 import com.erzu.quarter.R;
 
 /**
- * 推荐页面
+ * 视频页面
  * Created by hp on 2018/1/19.
  */
 
-public class RecommendFragment extends Fragment {
+public class VideoFragment extends Fragment {
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.fragment_recommend, null);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = View.inflate(getActivity(), R.layout.fragment_video, null);
         return view;
     }
 }
