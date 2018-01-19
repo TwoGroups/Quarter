@@ -8,3 +8,6 @@
 /captures
 .externalNativeBuild
 /.idea/
+app/libs/
+app/src/androidTest/
+app/src/test/
