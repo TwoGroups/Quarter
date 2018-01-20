@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context="com.erzu.quarter.view.activity.MainActivity">
 
-
     <RelativeLayout
         android:id="@+id/main_head_rl"
         android:layout_width="match_parent"
@@ -15,6 +14,7 @@
         android:background="#03A9F4">
 
         <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/main_simpledraweeview"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -34,6 +34,7 @@
             android:textSize="28sp" />
 
         <ImageView
+            android:id="@+id/main_tz"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
@@ -42,57 +43,12 @@
 
     </RelativeLayout>
 
-    <FrameLayout
-        android:id="@+id/main_fl"
+    <com.hjm.bottomtabbar.BottomTabBar
+        android:id="@+id/main_bottomtabbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/main_rg"
-        android:layout_below="@+id/main_head_rl"></FrameLayout>
+        android:layout_below="@+id/main_head_rl">
 
-    <RadioGroup
-        android:id="@+id/main_rg"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/recommend"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="推荐"
-            android:button="@null"
-            android:checked="true"
-            android:gravity="center" />
-
-        <RadioButton
-            android:id="@+id/jokes"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="段子" />
-
-        <RadioButton
-            android:id="@+id/video"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="视频" />
-
-        <RadioButton
-            android:id="@+id/oddphotos"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:text="趣图" />
-
-    </RadioGroup>
+    </com.hjm.bottomtabbar.BottomTabBar>
 
 </RelativeLayout>

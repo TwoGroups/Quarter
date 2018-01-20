@@ -1,11 +1,10 @@
 package com.erzu.quarter.view.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -14,36 +13,30 @@ import com.erzu.quarter.view.fragment.JokesFragment;
 import com.erzu.quarter.view.fragment.OddphotosFragment;
 import com.erzu.quarter.view.fragment.RecommendFragment;
 import com.erzu.quarter.view.fragment.VideoFragment;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.hjm.bottomtabbar.BottomTabBar;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 主页面
  */
 public class MainActivity extends AppCompatActivity {
+
     @BindView(R.id.main_title)
     TextView mainTitle;
     @BindView(R.id.main_head_rl)
     RelativeLayout mainHeadRl;
-    @BindView(R.id.main_fl)
-    FrameLayout mainFl;
-    @BindView(R.id.recommend)
-    RadioButton recommend;
-    @BindView(R.id.jokes)
-    RadioButton jokes;
-    @BindView(R.id.video)
-    RadioButton video;
-    @BindView(R.id.oddphotos)
-    RadioButton oddphotos;
-    @BindView(R.id.main_rg)
-    RadioGroup mainRg;
-    List<Fragment> list;
-
+    @BindView(R.id.main_bottomtabbar)
+    BottomTabBar mainBottomtabbar;
+    @BindView(R.id.main_simpledraweeview)
+    SimpleDraweeView mainSimpledraweeview;
+    @BindView(R.id.main_tz)
+    ImageView mainTz;
+    SlidingMenu menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,48 +47,33 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        list = new ArrayList<>();
-        RecommendFragment recommendFragment = new RecommendFragment();
-        JokesFragment jokesFragment = new JokesFragment();
-        VideoFragment videoFragment = new VideoFragment();
-        OddphotosFragment oddphotosFragment = new OddphotosFragment();
-        list.add(recommendFragment);
-        list.add(jokesFragment);
-        list.add(videoFragment);
-        list.add(oddphotosFragment);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_fl, list.get(0)).commit();
-        //radiogroup的点击事件
-        mainRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            int currentPosition = 0;
-
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i) {
-                    case R.id.recommend:
-                        currentPosition = 0;
-                        mainTitle.setText("推荐");
-                        break;
-                    case R.id.jokes:
-                        currentPosition = 1;
-                        mainTitle.setText("段子");
-                        break;
-                    case R.id.video:
-                        currentPosition = 2;
-                        mainTitle.setText("视频");
-                        break;
-                    case R.id.oddphotos:
-                        currentPosition = 3;
-                        mainTitle.setText("趣图");
-                        break;
-                }
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_fl, list.
-                        get(currentPosition)).commit();
-            }
-        });
+        mainBottomtabbar.init(getSupportFragmentManager())
+                .setImgSize(50, 50)
+                .setFontSize(16)
+                .setTabPadding(4, 6, 10)
+                .setChangeColor(Color.BLUE, Color.DKGRAY)
+                .addTabItem("推荐", R.mipmap.recommend, RecommendFragment.class)
+                .addTabItem("段子", R.mipmap.jokes, JokesFragment.class)
+                .addTabItem("视频", R.mipmap.video, VideoFragment.class)
+                .addTabItem("趣图", R.mipmap.oddphotos, OddphotosFragment.class)
+                .isShowDivider(false)
+                .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
+                    @Override
+                    public void onTabChange(int position, String name) {
+                        if (name.equals("推荐")) {
+                            mainTitle.setText("推荐");
+                        } else if (name.equals("段子")) {
+                            mainTitle.setText("段子");
+                        } else if (name.equals("视频")) {
+                            mainTitle.setText("视频");
+                        } else if (name.equals("趣图")) {
+                            mainTitle.setText("趣图");
+                        }
+                    }
+                });
 
         //侧滑
-        SlidingMenu menu = new SlidingMenu(this);
+        menu = new SlidingMenu(this);
         //设置侧滑的方向.左侧
         menu.setMode(SlidingMenu.LEFT);
         // 设置触摸屏幕的模式
@@ -108,5 +86,16 @@ public class MainActivity extends AppCompatActivity {
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         //为侧滑菜单设置布局
         menu.setMenu(R.layout.sliding_left);
+    }
+
+    @OnClick({R.id.main_simpledraweeview, R.id.main_tz})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.main_simpledraweeview:
+                menu.showMenu();
+                break;
+            case R.id.main_tz:
+                break;
+        }
     }
 }
