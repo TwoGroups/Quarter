@@ -28,21 +28,21 @@ public class APIFactory {
     //这里面写方法.
     public void get1(String url, Map<String,String> map, Observer<String> observer){
         //调用retrofit工具类的方法
-        RetrofitUtils.getInstance().get1(url, map)
+        RetrofitUtils.getInstance().get(url, map)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
 
     public void get1(String url,Observer<String> observer){
-        RetrofitUtils.getInstance().get1(url)
+        RetrofitUtils.getInstance().get(url)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
     public void post1(String url,Map<String,String> map,Observer<String> observer){
 
-        RetrofitUtils.getInstance().post1(url,map)
+        RetrofitUtils.getInstance().post(url,map)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
@@ -50,7 +50,7 @@ public class APIFactory {
 
     public void post1(String url,Observer<String> observer){
 
-        RetrofitUtils.getInstance().post1(url)
+        RetrofitUtils.getInstance().post(url)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
