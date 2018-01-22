@@ -1,4 +1,4 @@
-package com.erzu.quarter.model;
+package com.erzu.quarter.model.http;
 
 /**
  * Created by hp on 2018/1/19.
