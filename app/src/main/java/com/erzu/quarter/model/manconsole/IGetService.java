@@ -16,15 +16,15 @@ import retrofit2.http.Url;
 
 public interface IGetService {
     @GET
-    Observable<String> get1(@Url String url);//重载
+    Observable<String> get(@Url String url);//重载
 
     @GET
-    Observable<String> get1(@Url String url, @QueryMap Map<String, String> map);
+    Observable<String> get(@Url String url, @QueryMap Map<String, String> map);
 
     @FormUrlEncoded
     @POST
-    Observable<String> post1(@Url String url, @FieldMap Map<String, String> map);
+    Observable<String> post(@Url String url, @FieldMap Map<String, String> map);
 
     @POST
-    Observable<String> post1(@Url String url);
+    Observable<String> post(@Url String url);
 }
