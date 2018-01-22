@@ -1,4 +1,4 @@
-package com.erzu.quarter.model.manconsole;
+package com.erzu.quarter.model.httpfz;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

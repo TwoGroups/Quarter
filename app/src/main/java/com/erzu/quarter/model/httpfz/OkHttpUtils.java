@@ -1,4 +1,4 @@
-package com.erzu.quarter.model.manconsole;
+package com.erzu.quarter.model.httpfz;
 
 import java.util.concurrent.TimeUnit;
 
