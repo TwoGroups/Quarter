@@ -38,6 +38,24 @@
         android:layout_height="match_parent"
         android:background="@mipmap/creation_bj">
 
+        <ImageView
+            android:id="@+id/creation_video"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/creation_jokes"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:src="@mipmap/creation_video" />
+
+        <ImageView
+            android:id="@+id/creation_jokes"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignStart="@+id/creation_video"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/creation_jokes" />
+
+
     </RelativeLayout>
 
 </LinearLayout>
