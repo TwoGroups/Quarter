@@ -1,5 +1,6 @@
 package com.erzu.quarter.view.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     BottomTabBar mainBottomtabbar;
     @BindView(R.id.main_simpledraweeview)
     SimpleDraweeView mainSimpledraweeview;
-    @BindView(R.id.main_tz)
-    ImageView mainTz;
+    @BindView(R.id.main_fb)
+    ImageView mainFb;
     SlidingMenu menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,13 +89,17 @@ public class MainActivity extends AppCompatActivity {
         menu.setMenu(R.layout.sliding_left);
     }
 
-    @OnClick({R.id.main_simpledraweeview, R.id.main_tz})
+    @OnClick({R.id.main_simpledraweeview, R.id.main_fb})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.main_simpledraweeview:
+                //点击头像显示侧滑页面
                 menu.showMenu();
                 break;
-            case R.id.main_tz:
+            case R.id.main_fb:
+                //点击跳转到创作页面
+                Intent intent = new Intent(MainActivity.this,CreationActivity.class);
+                startActivity(intent);
                 break;
         }
     }
