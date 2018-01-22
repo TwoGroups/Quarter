@@ -46,7 +46,7 @@ public class JokesFragment extends Fragment implements IJokesView {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+//实例persenter
         JokesPresenter jokesPresenter = new JokesPresenter(this);
         jokesPresenter.getJokesData();
 
