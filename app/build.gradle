@@ -39,4 +39,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.2'
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation project(':library')
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
 }
