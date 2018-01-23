@@ -1,5 +1,6 @@
 package com.erzu.quarter.model.http;
 
+import com.erzu.quarter.model.bean.HotVideoBean;
 import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.erzu.quarter.model.httpfz.APIFactory;
 import com.erzu.quarter.model.httpfz.AbstractObserver;
@@ -12,19 +13,18 @@ import java.util.HashMap;
 
 public class VideoModel {
 
-    public void getData(final VideoModelCallBack videoModelCallBack) {
+    public void getHotData(String pageSize, final VideoModelCallBack videoModelCallBack) {
 
         HashMap<String, String> map = new HashMap<>();
         map.put("source", "android");
         map.put("appVersion", "101");
-        map.put("page", "1");
-        map.put("type", "1");
+        map.put("page", pageSize);
 
 
-        APIFactory.getInstance().get1("/quarter/getVideos", map, new AbstractObserver<VideoRecommendBean>() {
+        APIFactory.getInstance().get1("/quarter/getHotVideos", map, new AbstractObserver<HotVideoBean>() {
 
             @Override
-            public void onSuccess(VideoRecommendBean bean) {
+            public void onSuccess(HotVideoBean bean) {
                 videoModelCallBack.Succeed(bean);
             }
 
@@ -37,7 +37,7 @@ public class VideoModel {
     }
 
     public interface VideoModelCallBack {
-        void Succeed(VideoRecommendBean videoBean);
+        void Succeed(HotVideoBean videoBean);
 
         void Failure(Exception e);
     }

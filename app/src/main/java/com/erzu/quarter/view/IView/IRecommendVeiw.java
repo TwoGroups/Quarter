@@ -4,7 +4,7 @@ import com.erzu.quarter.model.bean.RecommendBannerBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
 
 /**
- * Created by samsung on 2018/1/22.
+ * Created by War on 2018/1/23.
  */
 
 public interface IRecommendVeiw {

@@ -31,7 +31,6 @@ public abstract class AbstractObserver<T> implements Observer<String> {
         //使用gson解析
         Gson gson = new Gson();
         T t = (T) gson.fromJson(result,clazz);
-
         //调用抽象方法onSuccess
         onSuccess(t);
     }

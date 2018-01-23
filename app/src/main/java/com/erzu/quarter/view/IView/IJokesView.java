@@ -3,7 +3,7 @@ package com.erzu.quarter.view.IView;
 import com.erzu.quarter.model.bean.JokesBean;
 
 /**
- * Created by 超Sir on 2018/1/22.
+ * Created by War on 2018/1/23.
  */
 
 public interface IJokesView {

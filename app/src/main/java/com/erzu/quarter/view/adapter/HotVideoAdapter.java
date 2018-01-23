@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.model.bean.HotVideoBean;
 import com.erzu.quarter.model.bean.VideoRecommendBean;
 
 import java.util.ArrayList;
@@ -21,15 +22,15 @@ import butterknife.ButterKnife;
  * Created by War on 2018/1/22.
  */
 
-public class RecommendRcyAdapter extends RecyclerView.Adapter<RecommendRcyAdapter.MyViewHolder> {
+public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyViewHolder> {
     private Context context;
-    private List<VideoRecommendBean.DataBean> list;
+    private List<HotVideoBean.DataBean> list;
 
-    public RecommendRcyAdapter(Context context) {
+    public HotVideoAdapter(Context context) {
         this.context = context;
     }
 
-    public void addData(VideoRecommendBean bean) {
+    public void addData(HotVideoBean bean) {
         if (list == null) {
             list = new ArrayList<>();
         }
@@ -45,7 +46,8 @@ public class RecommendRcyAdapter extends RecyclerView.Adapter<RecommendRcyAdapte
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.videoItemImg.setImageURI(Uri.parse(list.get(position).getCover()));
+//        holder.videoItemImg.setImageURI(Uri.parse(list.get(position).getCover()));
+        holder.videoItemImg.setImageResource(R.mipmap.ic_launcher);
         holder.videoItemTitle.setText(list.get(position).getCreateTime());
     }
 
