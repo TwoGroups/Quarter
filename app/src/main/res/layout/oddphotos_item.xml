@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/qutu_user_iamge"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            fresco:overlayImage="@mipmap/pic"
+            fresco:roundAsCircle="true" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_margin="10dp"
+                android:textColor="#f00"
+                android:text="天蝎和牛奶" />
+
+            <TextView
+                android:id="@+id/text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:text="2017-05-23 14:25" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/qutu_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="天气美美哒，适合郊游"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/qutu_mesg_iamge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@mipmap/pic" />
+        <RadioGroup
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8.5"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/btn2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/qt_xin"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/btn3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/qt_shxin"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/btn4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/raw_1499995160"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/btn5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@mipmap/raw_1499933789"
+                android:button="@null" />
+
+        </RadioGroup>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/qutu_text01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="骑猪上高速 不错"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/qutu_text02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="骑猪上高速 不错" />
+</LinearLayout>
