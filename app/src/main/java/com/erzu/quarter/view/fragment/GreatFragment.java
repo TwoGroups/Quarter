@@ -1,4 +1,4 @@
-package com.erzu.quarter.view.fragment.Recommend_Fragment;
+package com.erzu.quarter.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -30,7 +30,7 @@ import butterknife.Unbinder;
  * Created by samsung on 2018/1/22.
  */
 
-public class Fragment_great extends Fragment implements IRecommendVeiw{
+public class GreatFragment extends Fragment implements IRecommendVeiw{
     @BindView(R.id.banner)
     Banner banner;
     @BindView(R.id.rec)
