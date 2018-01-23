@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv"
+        android:layout_width="40dp"
+        fresco:placeholderImage="@drawable/raw"
+        fresco:roundAsCircle="true"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="天蝎喝牛奶"
+        android:textSize="20dp"
+        android:textColor="#ff00" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginLeft="50dp" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+         android:id="@+id/yuan"
+        android:layout_width="40dp"
+        fresco:placeholderImage="@drawable/yuanjia"
+        fresco:roundAsCircle="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_height="40dp"/>
+    <TextView
+        android:id="@+id/title_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sdv"
+        android:text="天气真没好"
+        android:textColor="#ff000000"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/ijv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/title_name"
+        android:background="@mipmap/start_bg"
+        android:layout_marginTop="20dp"></ImageView>
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/yuan"
+        android:layout_alignTop="@+id/ijv"
+        android:layout_marginEnd="23dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/btn1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/select_xin"
+            android:button="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:text="1563"
+            />
+
+        <RadioButton
+            android:id="@+id/btn2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/select_xingxing"
+            android:button="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:text="655"
+            />
+        <RadioButton
+            android:id="@+id/btn3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/select_share"
+            android:button="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:text="503"
+            />
+
+        <RadioButton
+            android:id="@+id/btn4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/select_comment"
+            android:button="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:text="1.1万"
+            />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/commentA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ijv"
+        android:layout_marginTop="30dp"
+        android:text="骑猪上高速:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/commentB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commentA"
+        android:layout_marginTop="10dp"
+        android:text="骑猪上高速:"
+        android:textSize="20dp" />
+</RelativeLayout>
