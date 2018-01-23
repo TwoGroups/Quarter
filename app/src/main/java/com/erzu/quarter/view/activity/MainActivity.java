@@ -39,24 +39,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.main_fb)
     ImageView mainFb;
     SlidingMenu menu;
-    @BindView(R.id.left_tx)
-    SimpleDraweeView leftTx;
-    @BindView(R.id.left_usersname)
-    TextView leftUsersname;
-    @BindView(R.id.left_login)
-    LinearLayout leftLogin;
-    @BindView(R.id.left_attention)
-    LinearLayout leftAttention;
-    @BindView(R.id.left_collect)
-    LinearLayout leftCollect;
-    @BindView(R.id.left_search)
-    LinearLayout leftSearch;
-    @BindView(R.id.ledt_message)
-    LinearLayout ledtMessage;
-    @BindView(R.id.left_production)
-    LinearLayout leftProduction;
-    @BindView(R.id.left_sz)
-    LinearLayout leftSz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
         menu.setMenu(R.layout.sliding_left);
     }
 
-    @OnClick({R.id.main_simpledraweeview, R.id.main_fb, R.id.left_login, R.id.left_attention, R.id.left_collect, R.id.left_search, R.id.ledt_message, R.id.left_production, R.id.left_sz})
-    public void onViewClicked(View view) {
+    @OnClick({R.id.main_simpledraweeview, R.id.main_fb})
+    public void onViewClicked1(View view) {
         switch (view.getId()) {
             case R.id.main_simpledraweeview:
                 //点击头像显示侧滑页面
@@ -118,43 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.main_fb:
                 //点击跳转到创作页面
-                Intent intentfb = new Intent(MainActivity.this, CreationActivity.class);
-                startActivity(intentfb);
-                break;
-            case R.id.left_login:
-                //点击头像用户名跳转到登录页面
-                Intent intentlogin = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intentlogin);
-                break;
-            case R.id.left_attention:
-                //点击跳转到我的关注页面
-                Intent intentattention = new Intent(MainActivity.this, AttentionActivity.class);
-                startActivity(intentattention);
-                break;
-            case R.id.left_collect:
-                //点击跳转到我的收藏页面
-                Intent intentcollect = new Intent(MainActivity.this, CollectActivity.class);
-                startActivity(intentcollect);
-                break;
-            case R.id.left_search:
-                //点击跳转到搜索好友页面
-                Intent intentsearch = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(intentsearch);
-                break;
-            case R.id.ledt_message:
-                //点击跳转到消息通知页面
-                Intent intentmessage = new Intent(MainActivity.this, MessageActivity.class);
-                startActivity(intentmessage);
-                break;
-            case R.id.left_production:
-                //点击跳转到我的作品页面
-                Intent intentproduction = new Intent(MainActivity.this, ProductionActivity.class);
-                startActivity(intentproduction);
-                break;
-            case R.id.left_sz:
-                //点击跳转到设置页面
-                Intent intentset = new Intent(MainActivity.this, SetActivity.class);
-                startActivity(intentset);
+                Intent intent = new Intent(MainActivity.this, CreationActivity.class);
+                startActivity(intent);
                 break;
         }
     }
