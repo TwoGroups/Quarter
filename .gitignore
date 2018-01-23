@@ -7,9 +7,8 @@
 /build
 /captures
 .externalNativeBuild
-app/libs/
-app/src/androidTest/
-app/src/test/
+/.idea/
+/.gradle/
 library/build/generated/assets/
 library/build/generated/res/
 library/build/generated/source/aidl/
@@ -31,5 +30,3 @@ library/build/intermediates/rs/
 library/build/intermediates/shaders/
 library/build/intermediates/tmp/
 library/build/tmp/
-/.gradle/
-/.idea/
