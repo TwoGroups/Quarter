@@ -3,6 +3,7 @@
     package="com.erzu.quarter">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -18,7 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.CreationActivity"></activity>
+        <activity android:name=".view.activity.CreationActivity" />
+        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity.AttentionActivity" />
+        <activity android:name=".view.activity.CollectActivity" />
+        <activity android:name=".view.activity.SearchActivity" />
+        <activity android:name=".view.activity.MessageActivity" />
+        <activity android:name=".view.activity.ProductionActivity" />
+        <activity android:name=".view.activity.SetActivity"></activity>
     </application>
 
 </manifest>
