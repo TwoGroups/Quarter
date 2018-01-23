@@ -1,4 +1,4 @@
-package com.erzu.quarter.view.fragment.Recommend_Fragment;
+package com.erzu.quarter.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

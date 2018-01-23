@@ -11,5 +11,9 @@ public class SetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set);
+        //隐藏标题栏
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
     }
 }

@@ -146,7 +146,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ledt_message"
+            android:id="@+id/left_message"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_margin="20dp"

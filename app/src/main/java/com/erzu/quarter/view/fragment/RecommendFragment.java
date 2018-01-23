@@ -12,8 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.erzu.quarter.R;
-import com.erzu.quarter.view.fragment.Recommend_Fragment.FollowFragment;
-import com.erzu.quarter.view.fragment.Recommend_Fragment.Fragment_great;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +46,8 @@ public class RecommendFragment extends Fragment {
 
     private void fragmentadd() {
         frag_list = new ArrayList<>();
-        frag_list.add(new Fragment_great());
+        frag_list.add(new GreatFragment());
         frag_list.add(new FollowFragment());
-
 
         title_list = new ArrayList<>();
         //将名称加载tab名字列表，正常情况下，我们应该在values/arrays.xml中进行定义然后调用
