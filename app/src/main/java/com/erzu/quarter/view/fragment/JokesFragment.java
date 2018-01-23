@@ -24,6 +24,7 @@ import butterknife.Unbinder;
 
 /**
  * 段子页面
+ * 李永超
  * Created by hp on 2018/1/19.
  */
 
@@ -46,10 +47,11 @@ public class JokesFragment extends Fragment implements IJokesView {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-//实例persenter
+        //实例persenter
         JokesPresenter jokesPresenter = new JokesPresenter(this);
+        //得到presenter中的数据
         jokesPresenter.getJokesData();
-
+        //布局样式
         jokesRv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
     }
@@ -57,6 +59,7 @@ public class JokesFragment extends Fragment implements IJokesView {
     @Override
     public void Succeed(JokesBean jokesBean) {
         list = jokesBean.getData();
+        //创建适配器做适配
         jokesAdapter = new JokesAdapter(getActivity(), list);
         jokesRv.setAdapter(jokesAdapter);
 

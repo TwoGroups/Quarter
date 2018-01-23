@@ -12,8 +12,8 @@
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/jokes_pic"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             fresco:overlayImage="@mipmap/pic"
             fresco:roundAsCircle="true"
             android:layout_centerVertical="true"
