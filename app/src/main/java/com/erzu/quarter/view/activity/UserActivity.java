@@ -5,14 +5,13 @@ import android.os.Bundle;
 
 import com.erzu.quarter.R;
 
-public class CollectActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collect);
-        //隐藏标题栏
-        if (getSupportActionBar() != null) {
+        setContentView(R.layout.activity_user);
+        if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
     }

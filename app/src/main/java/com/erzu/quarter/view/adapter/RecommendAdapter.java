@@ -4,14 +4,21 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
+import android.database.CursorWindow;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
+
+import com.erzu.quarter.utils.CustomPopWindow;
+import com.erzu.quarter.view.activity.UserActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -26,7 +33,8 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
     Context context;
 
     private View view;
-    private  SimpleDraweeView yuan;
+    private SimpleDraweeView yuan;
+
     public RecommendAdapter(Context context, List<RecommendVideoBean.DataBean> data) {
         this.context = context;
         this.list = data;
@@ -35,7 +43,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         view = View.inflate(context, R.layout.recommendrecyclerview_noe, null);
-        MyHolder myHolder=new MyHolder(view);
+        MyHolder myHolder = new MyHolder(view);
         return myHolder;
     }
 
@@ -49,16 +57,25 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
                 Animator animator3 = AnimatorInflater.loadAnimator(context, R.animator.rotation);
                 animator3.setTarget(holder.yuan);
                 animator3.start();
-                if (R.animator.rotation==500){
 
-                    showPopwindow();
-                }
+                showPopwindow();
             }
 
             private void showPopwindow() {
-
-
-
+                View contentView = LayoutInflater.from(context).inflate(R.layout.popwindows, null);
+//                //处理popWindow 显示内容
+//                handleLogic(contentView);
+                //创建并显示popWindow
+                CustomPopWindow mCustomPopWindow = new CustomPopWindow.PopupWindowBuilder(context)
+                        .setView(contentView)
+                        .create()
+                        .showAsDropDown(contentView, 500, 700);
+            }
+        });
+        holder.sdv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, UserActivity.class));
             }
         });
     }
@@ -75,6 +92,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
         private final TextView textView;
         private final TextView timer;
         private final SimpleDraweeView yuan;
+        private final SimpleDraweeView sdv;
 
         public MyHolder(View itemView) {
             super(itemView);
@@ -83,7 +101,8 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
             textView = (TextView) itemView.findViewById(R.id.title_name);
             commentA = (TextView) itemView.findViewById(R.id.commentA);
             commentB = (TextView) itemView.findViewById(R.id.commentB);
-            yuan = (SimpleDraweeView)itemView.findViewById(R.id.yuan);
+            yuan = (SimpleDraweeView) itemView.findViewById(R.id.yuan);
+            sdv = (SimpleDraweeView) itemView.findViewById(R.id.sdv);
         }
     }
 }

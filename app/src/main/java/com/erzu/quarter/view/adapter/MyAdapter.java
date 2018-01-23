@@ -5,4 +5,5 @@ package com.erzu.quarter.view.adapter;
  */
 
 public class MyAdapter {
+
 }
