@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
     android:layout_margin="10dp">
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/sdv"
         android:layout_width="40dp"
-        fresco:placeholderImage="@drawable/raw"
+        fresco:placeholderImage="@mipmap/raw"
         fresco:roundAsCircle="true"
         android:layout_height="40dp"/>
 
@@ -31,7 +32,7 @@
     <com.facebook.drawee.view.SimpleDraweeView
          android:id="@+id/yuan"
         android:layout_width="40dp"
-        fresco:placeholderImage="@drawable/yuanjia"
+        fresco:placeholderImage="@mipmap/yuanjia"
         fresco:roundAsCircle="true"
         android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
