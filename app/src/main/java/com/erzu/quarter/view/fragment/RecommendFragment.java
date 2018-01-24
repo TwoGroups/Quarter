@@ -41,7 +41,6 @@ public class RecommendFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
         fragmentadd();
         return view;
-
     }
 
     private void fragmentadd() {
@@ -54,7 +53,7 @@ public class RecommendFragment extends Fragment {
         title_list.add("热门");
         title_list.add("关注");
         //设置TabLayout的模式
-        tabFindFragmentTitle.setTabMode(TabLayout.MODE_FIXED);
+        tabFindFragmentTitle.setTabMode(TabLayout.FOCUSABLE);
         tabFindFragmentTitle.addTab(tabFindFragmentTitle.newTab().setText(title_list.get(0)));
         tabFindFragmentTitle.addTab(tabFindFragmentTitle.newTab().setText(title_list.get(1)));
         Viewpager viewpager = new Viewpager(getActivity().getSupportFragmentManager());
@@ -63,7 +62,6 @@ public class RecommendFragment extends Fragment {
          * TabLayout与Viewpager关联
          */
         tabFindFragmentTitle.setupWithViewPager(vpFindFragmentPager);
-
     }
     /**
      * ViewPager适配器

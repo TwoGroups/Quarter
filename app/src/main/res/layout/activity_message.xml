@@ -4,11 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.erzu.quarter.view.activity.MessageActivity">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="消息通知页面"/>
+        android:layout_height="70dp"
+        android:background="#03A9F4">
+
+        <LinearLayout
+            android:id="@+id/message_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="#fff"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="消息通知"
+            android:textColor="#fff"
+            android:textSize="26sp" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/message_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/titleBlue"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/gray"
+        app:tabGravity="center"
+        app:tabTextColor="@color/whitee"/>
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/message_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>
