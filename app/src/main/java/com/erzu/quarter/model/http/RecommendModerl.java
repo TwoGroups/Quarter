@@ -2,6 +2,7 @@ package com.erzu.quarter.model.http;
 
 import com.erzu.quarter.model.bean.RecommendBannerBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
+import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.erzu.quarter.model.httpfz.APIFactory;
 import com.erzu.quarter.model.httpfz.AbstractObserver;
 
@@ -31,10 +32,10 @@ public class RecommendModerl {
             }
         });
 
-    }
+        }
 
     public void getVideo(final RecommendModerlCallBackVideo callBackVideo) {
-        String url = "/quarter/getHotVideos?page=1&token=44ECB7BF74853A20D62CF8279AB2AEE1&source=android&appVersion=101";
+        String url = "/quarter/getVideos?source=android&appVersion=101&type=1&page=1";
         APIFactory.getInstance().get1(url, new AbstractObserver<RecommendVideoBean>() {
             @Override
             public void onSuccess(RecommendVideoBean recommendVideoBean) {

@@ -1,6 +1,7 @@
 package com.erzu.quarter.view.adapter;
 
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
+import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -29,6 +31,9 @@ public class OddphotosAdapter extends RecyclerView.Adapter<OddphotosAdapter.MyHo
         this.context = context;
         this.list = data;
     }
+
+
+
 
 
     @Override

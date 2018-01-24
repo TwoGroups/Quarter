@@ -2,6 +2,7 @@ package com.erzu.quarter.presenter;
 
 import com.erzu.quarter.model.bean.RecommendBannerBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
+import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.erzu.quarter.model.http.RecommendModerl;
 import com.erzu.quarter.view.IView.IRecommendVeiw;
 
@@ -35,8 +36,8 @@ public class RecommendPresenter {
     public void showVideo() {
         recommendModerl.getVideo(new RecommendModerl.RecommendModerlCallBackVideo() {
             @Override
-            public void SuccessVideo(RecommendVideoBean recommendVideoBean) {
-                iRecommendVeiw.Success_video(recommendVideoBean);
+            public void SuccessVideo(RecommendVideoBean videoRecommendBean) {
+                iRecommendVeiw.Success_video(videoRecommendBean);
             }
 
             @Override

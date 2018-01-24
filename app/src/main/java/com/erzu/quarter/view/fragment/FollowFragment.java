@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.RecommendBannerBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
+import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.erzu.quarter.presenter.RecommendPresenter;
 import com.erzu.quarter.view.IView.IRecommendVeiw;
 import com.erzu.quarter.view.adapter.RecommendAdapter;
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by samsung on 2018/1/22.
+ * 关注界面
  */
 
 public class FollowFragment extends Fragment implements IRecommendVeiw {

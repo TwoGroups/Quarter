@@ -14,6 +14,7 @@ import com.erzu.quarter.ImagGithub.ImgGithub;
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.RecommendBannerBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
+import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.erzu.quarter.model.httpfz.APIFactory;
 import com.erzu.quarter.presenter.RecommendPresenter;
 import com.erzu.quarter.view.IView.IRecommendVeiw;
