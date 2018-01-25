@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/raw_tx"
+    android:background="@mipmap/loginymbackground"
     tools:context="com.erzu.quarter.view.activity.RegistActivity">
 
     <RelativeLayout
@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:textColor="#fff"
             android:text="已有账号?"
             android:textSize="20sp"/>
     </RelativeLayout>
@@ -61,20 +62,20 @@
         android:id="@+id/regist_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/regist_password"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="120dp"
+        android:layout_marginTop="29dp"
         android:background="@drawable/button_select"
         android:text="注册"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/visitor_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/imageView"
-        android:layout_marginBottom="61dp"
+        android:layout_below="@+id/regist_btn"
+        android:layout_marginTop="30dp"
         android:text="游客登录"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 </RelativeLayout>
