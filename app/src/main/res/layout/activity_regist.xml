@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/raw_tx"
+    android:background="@mipmap/loginymbackground"
     tools:context="com.erzu.quarter.view.activity.RegistActivity">
 
     <RelativeLayout

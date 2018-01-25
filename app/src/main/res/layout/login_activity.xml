@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/login_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@mipmap/back" />
 
         <TextView
@@ -64,7 +64,7 @@
         android:layout_below="@+id/login_password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
-        android:background="#F7BF6A"
+        android:background="@drawable/button_select"
         android:text="登录"
         android:textColor="#fff"
         android:textSize="20sp" />
