@@ -77,6 +77,7 @@ public class ActivityLogin extends AppCompatActivity implements ILoginView {
             case R.id.visitor_login:
                 Intent visitor = new Intent(ActivityLogin.this, MainActivity.class);
                 startActivity(visitor);
+                finish();
                 break;
         }
     }
