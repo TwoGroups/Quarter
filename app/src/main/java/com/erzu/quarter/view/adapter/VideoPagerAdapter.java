@@ -12,10 +12,17 @@ import java.util.List;
 
 public class VideoPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> list;
+    private List<String> title_list;
 
-    public VideoPagerAdapter(FragmentManager fm, List<Fragment> list) {
+    public VideoPagerAdapter(FragmentManager fm, List<Fragment> list, List<String> title_list) {
         super(fm);
         this.list = list;
+        this.title_list = title_list;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return title_list.get(position);
     }
 
     @Override
@@ -27,5 +34,4 @@ public class VideoPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         return list.get(position);
     }
-
 }

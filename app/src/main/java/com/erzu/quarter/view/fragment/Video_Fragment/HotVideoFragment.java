@@ -3,18 +3,17 @@ package com.erzu.quarter.view.fragment.Video_Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.HotVideoBean;
 import com.erzu.quarter.presenter.VideoPresenter;
 import com.erzu.quarter.view.IView.IVideoView;
 import com.erzu.quarter.view.adapter.HotVideoAdapter;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +25,7 @@ import butterknife.Unbinder;
 
 public class HotVideoFragment extends Fragment implements IVideoView {
     @BindView(R.id.frag_hot_view)
-    RecyclerView fragHotView;
+    XRecyclerView fragHotView;
     Unbinder unbinder;
     private VideoPresenter presenter;
     private int size = 1;
@@ -37,18 +36,27 @@ public class HotVideoFragment extends Fragment implements IVideoView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.frag_hot_video, null);
         unbinder = ButterKnife.bind(this, view);
-        Toast.makeText(getActivity(), "Hot", Toast.LENGTH_SHORT).show();
-        return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         adapter = new HotVideoAdapter(getActivity());
         fragHotView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         fragHotView.setAdapter(adapter);
+        fragHotView.setPullRefreshEnabled(true);
+        fragHotView.setLoadingMoreEnabled(true);
         presenter = new VideoPresenter(this);
         presenter.getHotVideoData(size + "");
+        fragHotView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                fragHotView.refreshComplete();
+            }
+
+            @Override
+            public void onLoadMore() {
+                size++;
+                presenter.getHotVideoData(size + "");
+                fragHotView.loadMoreComplete();
+            }
+        });
+        return view;
     }
 
     @Override
@@ -60,7 +68,6 @@ public class HotVideoFragment extends Fragment implements IVideoView {
     @Override
     public void onSucceed(HotVideoBean videosBean) {
         adapter.addData(videosBean);
-        System.out.println("+++++"+videosBean.toString());
     }
 
     @Override

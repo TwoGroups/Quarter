@@ -40,12 +40,23 @@ public class VideoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_video, null);
         unbinder = ButterKnife.bind(this, view);
+        initView();
+        return view;
+    }
+
+    private void initView() {
         list = new ArrayList<>();
         list.add(new HotVideoFragment());
         list.add(new NearVideoFragment());
-        adapter = new VideoPagerAdapter(getChildFragmentManager(), list);
+        List<String> title_list = new ArrayList<>();
+        //将名称加载tab名字列表，正常情况下，我们应该在values/arrays.xml中进行定义然后调用
+        title_list.add("热门");
+        title_list.add("附近");
+        adapter = new VideoPagerAdapter(getChildFragmentManager(), list, title_list);
         videoViewPager.setAdapter(adapter);
-        return view;
+        //设置TabLayout的模式
+        videoTab.setTabMode(TabLayout.MODE_FIXED);
+        videoTab.setupWithViewPager(videoViewPager);
     }
 
     @Override

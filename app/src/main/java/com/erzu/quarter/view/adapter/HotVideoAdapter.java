@@ -1,7 +1,7 @@
 package com.erzu.quarter.view.adapter;
 
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.HotVideoBean;
-import com.erzu.quarter.model.bean.VideoRecommendBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,9 +45,15 @@ public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-//        holder.videoItemImg.setImageURI(Uri.parse(list.get(position).getCover()));
+        //holder.videoItemImg.setImageURI(Uri.parse(list.get(position).getCover()));
         holder.videoItemImg.setImageResource(R.mipmap.ic_launcher);
         holder.videoItemTitle.setText(list.get(position).getCreateTime());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                new Intent()
+            }
+        });
     }
 
 

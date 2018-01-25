@@ -9,32 +9,16 @@
         android:id="@+id/video_Tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:visibility="visible"
         app:tabIndicatorColor="@android:color/holo_orange_light"
-        app:tabIndicatorHeight="4dp"
         app:tabSelectedTextColor="@android:color/holo_orange_light"
-        app:tabTextColor="@color/colorPrimary">
+        app:tabTextColor="@color/colorPrimary"/>
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="热门"
-            app:tabGravity="center"
-            />
-
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="附近"
-            app:tabGravity="center"/>
-
-    </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/video_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/video_Tab">
-
     </android.support.v4.view.ViewPager>
 </RelativeLayout>
