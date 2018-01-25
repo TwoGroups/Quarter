@@ -44,22 +44,22 @@ public class NearVideoFragment extends Fragment implements IVideoView {
         unbinder = ButterKnife.bind(this, view);
         data = new ArrayList<>();
         fragNearView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        fragNearView.setPullRefreshEnabled(true);
-        fragNearView.setLoadingMoreEnabled(true);
+        fragNearView.setPullRefreshEnabled(false);
+//        fragNearView.setLoadingMoreEnabled(true);
         presenter = new VideoPresenter(this);
         presenter.getHotVideoData(size + "");
-        fragNearView.setLoadingListener(new XRecyclerView.LoadingListener() {
-            @Override
-            public void onRefresh() {
-                fragNearView.refreshComplete();
-            }
-
-            @Override
-            public void onLoadMore() {
-                size++;
-                presenter.getHotVideoData(size + "");
-            }
-        });
+//        fragNearView.setLoadingListener(new XRecyclerView.LoadingListener() {
+//            @Override
+//            public void onRefresh() {
+//                fragNearView.refreshComplete();
+//            }
+//
+//            @Override
+//            public void onLoadMore() {
+//                size++;
+//                presenter.getHotVideoData(size + "");
+//            }
+//        });
         return view;
     }
 
@@ -74,7 +74,7 @@ public class NearVideoFragment extends Fragment implements IVideoView {
         data.addAll(videosBean.getData());
         adapter = new HotVideoAdapter(getActivity(), data);
         fragNearView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+//        adapter.notifyDataSetChanged();
     }
 
     @Override

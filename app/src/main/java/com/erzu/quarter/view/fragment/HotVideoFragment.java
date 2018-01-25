@@ -43,22 +43,22 @@ public class HotVideoFragment extends Fragment implements IVideoView {
         unbinder = ButterKnife.bind(this, view);
         data = new ArrayList<>();
         fragHotView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        fragHotView.setPullRefreshEnabled(true);
-        fragHotView.setLoadingMoreEnabled(true);
+        fragHotView.setPullRefreshEnabled(false);
+//        fragHotView.setLoadingMoreEnabled(true);
         presenter = new VideoPresenter(this);
         presenter.getHotVideoData(size + "");
-        fragHotView.setLoadingListener(new XRecyclerView.LoadingListener() {
-            @Override
-            public void onRefresh() {
-                fragHotView.refreshComplete();
-            }
-
-            @Override
-            public void onLoadMore() {
-                size++;
-                presenter.getHotVideoData(size + "");
-            }
-        });
+//        fragHotView.setLoadingListener(new XRecyclerView.LoadingListener() {
+//            @Override
+//            public void onRefresh() {
+//                fragHotView.refreshComplete();
+//            }
+//
+//            @Override
+//            public void onLoadMore() {
+//                size++;
+//                presenter.getHotVideoData(size + "");
+//            }
+//        });
         return view;
     }
 
@@ -71,11 +71,11 @@ public class HotVideoFragment extends Fragment implements IVideoView {
 
     @Override
     public void onSucceed(RecommendVideoBean videosBean) {
-        fragHotView.loadMoreComplete();
+//        fragHotView.loadMoreComplete();
         data.addAll(videosBean.getData());
         adapter = new HotVideoAdapter(getActivity(), data);
         fragHotView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+//        adapter.notifyDataSetChanged();
     }
 
     @Override
