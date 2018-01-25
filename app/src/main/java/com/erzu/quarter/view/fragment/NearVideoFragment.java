@@ -1,4 +1,4 @@
-package com.erzu.quarter.view.fragment.Video_Fragment;
+package com.erzu.quarter.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,42 +20,29 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
+ * 附近
  * Created by War on 2018/1/23.
  */
 
-public class HotVideoFragment extends Fragment implements IVideoView {
-    @BindView(R.id.frag_hot_view)
-    XRecyclerView fragHotView;
+public class NearVideoFragment extends Fragment implements IVideoView {
+
+    @BindView(R.id.frag_near_view)
+    XRecyclerView fragNearView;
     Unbinder unbinder;
+    private HotVideoAdapter adapter;
     private VideoPresenter presenter;
     private int size = 1;
-    private HotVideoAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.frag_hot_video, null);
+        View view = View.inflate(getActivity(), R.layout.frag_near_video, null);
         unbinder = ButterKnife.bind(this, view);
         adapter = new HotVideoAdapter(getActivity());
-        fragHotView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        fragHotView.setAdapter(adapter);
-        fragHotView.setPullRefreshEnabled(true);
-        fragHotView.setLoadingMoreEnabled(true);
+        fragNearView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        fragNearView.setAdapter(adapter);
         presenter = new VideoPresenter(this);
         presenter.getHotVideoData(size + "");
-        fragHotView.setLoadingListener(new XRecyclerView.LoadingListener() {
-            @Override
-            public void onRefresh() {
-                fragHotView.refreshComplete();
-            }
-
-            @Override
-            public void onLoadMore() {
-                size++;
-                presenter.getHotVideoData(size + "");
-                fragHotView.loadMoreComplete();
-            }
-        });
         return view;
     }
 
@@ -68,6 +55,7 @@ public class HotVideoFragment extends Fragment implements IVideoView {
     @Override
     public void onSucceed(HotVideoBean videosBean) {
         adapter.addData(videosBean);
+        System.out.println("----" + videosBean.toString());
     }
 
     @Override
