@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="已有账号?"
+            android:text="@string/has_option"
             android:textSize="20sp"/>
     </RelativeLayout>
 
@@ -44,7 +44,7 @@
         android:layout_marginTop="18dp"
         android:background="@drawable/edit_bg"
         android:ems="10"
-        android:hint="请输入手机号"/>
+        android:hint="@string/phone_option"/>
 
     <EditText
         android:id="@+id/regist_password"
@@ -55,7 +55,7 @@
         android:layout_marginTop="22dp"
         android:background="@drawable/edit_bg"
         android:ems="10"
-        android:hint="密码不能超过8位"/>
+        android:hint="@string/pass_option"/>
 
     <Button
         android:id="@+id/regist_btn"
@@ -65,7 +65,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="120dp"
         android:background="@drawable/button_select"
-        android:text="注册"
+        android:text="@string/regist_btn"
         android:textSize="20sp"/>
 
     <TextView
@@ -75,6 +75,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/imageView"
         android:layout_marginBottom="61dp"
-        android:text="游客登录"
+        android:text="@string/login_visitor"
         android:textSize="20sp"/>
 </RelativeLayout>
