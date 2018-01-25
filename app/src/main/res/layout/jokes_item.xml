@@ -43,7 +43,30 @@
                 android:textSize="15sp"
                 android:text="2018-12-12  12:21" />
         </LinearLayout>
-
+        <ImageView
+            android:id="@+id/jokes_dx"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:src="@mipmap/d_dx" />
+        <ImageView
+            android:id="@+id/jokes_fx"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:src="@mipmap/d_fx" />
+        <ImageView
+            android:id="@+id/jokes_xx"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:src="@mipmap/d_xx" />
         <ImageView
             android:id="@+id/jokes_jia"
             android:layout_width="50dp"

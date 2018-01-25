@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.view.adapter.VideoPagerAdapter;
-import com.erzu.quarter.view.fragment.Video_Fragment.HotVideoFragment;
-import com.erzu.quarter.view.fragment.Video_Fragment.NearVideoFragment;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,11 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.erzu.quarter.ImagGithub.ImgGithub;
+import com.erzu.quarter.utils.imagegithub.ImgGithub;
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.RecommendBannerBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
-import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.erzu.quarter.presenter.RecommendPresenter;
 import com.erzu.quarter.view.IView.IRecommendVeiw;
 import com.erzu.quarter.view.adapter.RecommendAdapter;

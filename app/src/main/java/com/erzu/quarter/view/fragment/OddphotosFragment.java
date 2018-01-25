@@ -5,23 +5,17 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.erzu.quarter.ImagGithub.ImgGithub;
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.RecommendBannerBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
-import com.erzu.quarter.model.bean.VideoRecommendBean;
-import com.erzu.quarter.model.httpfz.APIFactory;
 import com.erzu.quarter.presenter.RecommendPresenter;
 import com.erzu.quarter.view.IView.IRecommendVeiw;
 import com.erzu.quarter.view.adapter.OddphotosAdapter;
-import com.erzu.quarter.view.adapter.RecommendAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

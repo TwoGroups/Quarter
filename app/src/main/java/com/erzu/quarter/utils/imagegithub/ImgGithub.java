@@ -1,4 +1,4 @@
-package com.erzu.quarter.ImagGithub;
+package com.erzu.quarter.utils.imagegithub;
 
 import android.content.Context;
 import android.widget.ImageView;

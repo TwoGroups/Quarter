@@ -1,4 +1,4 @@
-package com.erzu.quarter.view.fragment.Video_Fragment;
+package com.erzu.quarter.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,21 +24,20 @@ import butterknife.Unbinder;
  * Created by War on 2018/1/23.
  */
 
-public class NearVideoFragment extends Fragment implements IVideoView {
-
-    @BindView(R.id.frag_near_view)
-    RecyclerView fragNearView;
+public class HotVideoFragment extends Fragment implements IVideoView {
+    @BindView(R.id.frag_hot_view)
+    RecyclerView fragHotView;
     Unbinder unbinder;
-    private HotVideoAdapter adapter;
     private VideoPresenter presenter;
     private int size = 1;
+    private HotVideoAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.frag_near_video, null);
+        View view = View.inflate(getActivity(), R.layout.frag_hot_video, null);
         unbinder = ButterKnife.bind(this, view);
-        Toast.makeText(getActivity(), "Near", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Hot", Toast.LENGTH_SHORT).show();
         return view;
     }
 
@@ -46,8 +45,8 @@ public class NearVideoFragment extends Fragment implements IVideoView {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         adapter = new HotVideoAdapter(getActivity());
-        fragNearView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        fragNearView.setAdapter(adapter);
+        fragHotView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        fragHotView.setAdapter(adapter);
         presenter = new VideoPresenter(this);
         presenter.getHotVideoData(size + "");
     }
@@ -61,7 +60,7 @@ public class NearVideoFragment extends Fragment implements IVideoView {
     @Override
     public void onSucceed(HotVideoBean videosBean) {
         adapter.addData(videosBean);
-        System.out.println("----"+videosBean.toString());
+        System.out.println("+++++"+videosBean.toString());
     }
 
     @Override
