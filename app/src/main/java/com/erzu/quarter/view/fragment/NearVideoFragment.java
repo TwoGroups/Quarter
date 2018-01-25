@@ -10,10 +10,14 @@ import android.view.ViewGroup;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.HotVideoBean;
+import com.erzu.quarter.model.bean.RecommendVideoBean;
 import com.erzu.quarter.presenter.VideoPresenter;
 import com.erzu.quarter.view.IView.IVideoView;
 import com.erzu.quarter.view.adapter.HotVideoAdapter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,17 +36,30 @@ public class NearVideoFragment extends Fragment implements IVideoView {
     private HotVideoAdapter adapter;
     private VideoPresenter presenter;
     private int size = 1;
-
+    private List<RecommendVideoBean.DataBean> data;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.frag_near_video, null);
         unbinder = ButterKnife.bind(this, view);
-        adapter = new HotVideoAdapter(getActivity());
+        data = new ArrayList<>();
         fragNearView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        fragNearView.setAdapter(adapter);
+        fragNearView.setPullRefreshEnabled(true);
+        fragNearView.setLoadingMoreEnabled(true);
         presenter = new VideoPresenter(this);
         presenter.getHotVideoData(size + "");
+        fragNearView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                fragNearView.refreshComplete();
+            }
+
+            @Override
+            public void onLoadMore() {
+                size++;
+                presenter.getHotVideoData(size + "");
+            }
+        });
         return view;
     }
 
@@ -53,9 +70,11 @@ public class NearVideoFragment extends Fragment implements IVideoView {
     }
 
     @Override
-    public void onSucceed(HotVideoBean videosBean) {
-        adapter.addData(videosBean);
-        System.out.println("----" + videosBean.toString());
+    public void onSucceed(RecommendVideoBean videosBean) {
+        data.addAll(videosBean.getData());
+        adapter = new HotVideoAdapter(getActivity(), data);
+        fragNearView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

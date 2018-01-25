@@ -1,21 +1,20 @@
 package com.erzu.quarter.view.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.erzu.quarter.R;
-import com.erzu.quarter.model.bean.HotVideoBean;
+import com.erzu.quarter.model.bean.RecommendVideoBean;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.jzvd.JZVideoPlayerStandard;
 
 /**
  * Created by War on 2018/1/22.
@@ -23,18 +22,11 @@ import butterknife.ButterKnife;
 
 public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyViewHolder> {
     private Context context;
-    private List<HotVideoBean.DataBean> list;
+    private List<RecommendVideoBean.DataBean> list;
 
-    public HotVideoAdapter(Context context) {
+    public HotVideoAdapter(Context context, List<RecommendVideoBean.DataBean> list) {
         this.context = context;
-    }
-
-    public void addData(HotVideoBean bean) {
-        if (list == null) {
-            list = new ArrayList<>();
-        }
-        list = bean.getData();
-        notifyDataSetChanged();
+        this.list = list;
     }
 
     @Override
@@ -45,13 +37,13 @@ public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        //holder.videoItemImg.setImageURI(Uri.parse(list.get(position).getCover()));
-        holder.videoItemImg.setImageResource(R.mipmap.ic_launcher);
+        holder.videoPlayer.setUp(list.get(position).getVideoUrl(), JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "");
+        ImageLoader.getInstance().displayImage(list.get(position).getCover(), holder.videoPlayer.thumbImageView);
         holder.videoItemTitle.setText(list.get(position).getCreateTime());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                new Intent()
+                //                new Intent()
             }
         });
     }
@@ -59,12 +51,12 @@ public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return list == null ? 0 : list.size();
+        return list.size();
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.video_item_img)
-        ImageView videoItemImg;
+        @BindView(R.id.videoplayer)
+        JZVideoPlayerStandard videoPlayer;
         @BindView(R.id.video_item_title)
         TextView videoItemTitle;
 

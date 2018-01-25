@@ -39,4 +39,13 @@ public class RegistBean {
     public void setData(String data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "RegistBean{" +
+                "msg='" + msg + '\'' +
+                ", code='" + code + '\'' +
+                ", data='" + data + '\'' +
+                '}';
+    }
 }

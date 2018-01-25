@@ -72,6 +72,7 @@ public class RegistActivity extends AppCompatActivity implements IRegistView {
             case R.id.visitor_login:
                 Intent visitor = new Intent(RegistActivity.this, MainActivity.class);
                 startActivity(visitor);
+                finish();
                 break;
         }
     }

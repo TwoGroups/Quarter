@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.erzu.quarter.R;
-import com.erzu.quarter.model.bean.HotVideoBean;
+import com.erzu.quarter.model.bean.RecommendVideoBean;
 import com.erzu.quarter.presenter.VideoPresenter;
 import com.erzu.quarter.view.IView.IVideoView;
 import com.erzu.quarter.view.adapter.HotVideoAdapter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,15 +34,15 @@ public class HotVideoFragment extends Fragment implements IVideoView {
     private VideoPresenter presenter;
     private int size = 1;
     private HotVideoAdapter adapter;
+    private List<RecommendVideoBean.DataBean> data;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.frag_hot_video, null);
         unbinder = ButterKnife.bind(this, view);
-        adapter = new HotVideoAdapter(getActivity());
+        data = new ArrayList<>();
         fragHotView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        fragHotView.setAdapter(adapter);
         fragHotView.setPullRefreshEnabled(true);
         fragHotView.setLoadingMoreEnabled(true);
         presenter = new VideoPresenter(this);
@@ -54,11 +57,11 @@ public class HotVideoFragment extends Fragment implements IVideoView {
             public void onLoadMore() {
                 size++;
                 presenter.getHotVideoData(size + "");
-                fragHotView.loadMoreComplete();
             }
         });
         return view;
     }
+
 
     @Override
     public void onDestroyView() {
@@ -67,8 +70,12 @@ public class HotVideoFragment extends Fragment implements IVideoView {
     }
 
     @Override
-    public void onSucceed(HotVideoBean videosBean) {
-        adapter.addData(videosBean);
+    public void onSucceed(RecommendVideoBean videosBean) {
+        fragHotView.loadMoreComplete();
+        data.addAll(videosBean.getData());
+        adapter = new HotVideoAdapter(getActivity(), data);
+        fragHotView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     @Override
