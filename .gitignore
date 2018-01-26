@@ -30,3 +30,5 @@ library/build/intermediates/rs/
 library/build/intermediates/shaders/
 library/build/intermediates/tmp/
 library/build/tmp/
+app/src/androidTest/
+app/src/test/
