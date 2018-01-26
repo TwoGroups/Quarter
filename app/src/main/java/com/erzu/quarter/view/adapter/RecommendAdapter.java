@@ -2,18 +2,20 @@ package com.erzu.quarter.view.adapter;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.erzu.quarter.R;
+import com.erzu.quarter.model.bean.EventBean;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
 import com.erzu.quarter.utils.CustomPopWindow;
 import com.erzu.quarter.view.activity.UserActivity;
@@ -21,8 +23,11 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.List;
 
+import butterknife.BindView;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 
@@ -34,6 +39,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
 
     List<RecommendVideoBean.DataBean> list;
     Context context;
+
 
     private View view;
     private SimpleDraweeView yuan;
@@ -53,7 +59,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
     }
 
     @Override
-    public void onBindViewHolder(final MyHolder holder, int position) {
+    public void onBindViewHolder(final MyHolder holder, final int position) {
 
         DraweeController controller = Fresco.newDraweeControllerBuilder()
                 .setUri(list.get(position).getCover())
@@ -71,8 +77,6 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
                 .into(jcVideoPlayerStandard.thumbImageView);
         jcVideoPlayerStandard.widthRatio = 4;//播放比例
         jcVideoPlayerStandard.heightRatio = 3;
-
-
 
 
         holder.yuan.setOnClickListener(new View.OnClickListener() {
@@ -96,9 +100,11 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
                         .showAsDropDown(contentView, 500, 700);
             }
         });
+
         holder.sdv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EventBus.getDefault().postSticky(new EventBean(list.get(position).getCover()));
                 context.startActivity(new Intent(context, UserActivity.class));
             }
         });

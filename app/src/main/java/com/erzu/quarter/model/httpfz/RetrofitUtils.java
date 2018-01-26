@@ -10,12 +10,14 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitUtils {
     private static IGetService service = null;
+    public static IGetService getService = null;
+
     //http://api.tianapi.com/nba/?key=71e58b5b2f930eaf1f937407acde08fe&num=10
     //单例模式
-    public static IGetService getInstance(){
-        if(service==null){
-            synchronized (RetrofitUtils.class){
-                if(service==null){
+    public static IGetService getInstance() {
+        if (service == null) {
+            synchronized (RetrofitUtils.class) {
+                if (service == null) {
                     Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl("https://www.zhaoapi.cn")
                             .addConverterFactory(ScalarsConverterFactory.create())
@@ -29,4 +31,6 @@ public class RetrofitUtils {
         }
         return service;
     }
+
+
 }
