@@ -94,7 +94,7 @@
                 android:layout_width="95dp"
                 android:layout_height="95dp"
                 android:padding="10dp"
-                android:src="@mipmap/bj" />
+                android:src="@mipmap/bj_fb" />
 
         </LinearLayout>
 

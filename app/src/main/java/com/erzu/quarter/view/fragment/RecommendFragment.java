@@ -51,9 +51,9 @@ public class RecommendFragment extends Fragment {
         title_list.add("热门");
         title_list.add("关注");
         //设置TabLayout的模式
-        tabFindFragmentTitle.setTabMode(TabLayout.FOCUSABLE);
-        tabFindFragmentTitle.addTab(tabFindFragmentTitle.newTab().setText(title_list.get(0)));
-        tabFindFragmentTitle.addTab(tabFindFragmentTitle.newTab().setText(title_list.get(1)));
+        tabFindFragmentTitle.setTabMode(TabLayout.MODE_FIXED);
+//        tabFindFragmentTitle.addTab(tabFindFragmentTitle.newTab().setText(title_list.get(0)));
+//        tabFindFragmentTitle.addTab(tabFindFragmentTitle.newTab().setText(title_list.get(1)));
         Viewpager viewpager = new Viewpager(getActivity().getSupportFragmentManager());
         vpFindFragmentPager.setAdapter(viewpager);
         /**

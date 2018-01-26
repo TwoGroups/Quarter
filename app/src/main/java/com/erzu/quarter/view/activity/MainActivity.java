@@ -2,15 +2,21 @@ package com.erzu.quarter.view.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.utils.nightmodel.ThemeManager;
 import com.erzu.quarter.view.fragment.JokesFragment;
 import com.erzu.quarter.view.fragment.OddphotosFragment;
 import com.erzu.quarter.view.fragment.RecommendFragment;
@@ -18,6 +24,7 @@ import com.erzu.quarter.view.fragment.VideoFragment;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.suke.widget.SwitchButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +33,7 @@ import butterknife.OnClick;
 /**
  * 主页面
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ThemeManager.OnThemeChangeListener {
 
     @BindView(R.id.main_title)
     TextView mainTitle;
@@ -40,6 +47,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView mainFb;
     SlidingMenu menu;
     View view;
+    @BindView(R.id.mian_relativelayout)
+    RelativeLayout mianRelativelayout;
+    private ActionBar supportActionBar;
+    SwitchButton main_night_button;
+    RelativeLayout left_relativelayout;
+    ImageView left_night;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .isShowDivider(false)
                 .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
                     @Override
-                    public void onTabChange(int position, String name) {
+                    public void onTabChange(int position, final String name) {
                         if (name.equals("推荐")) {
                             mainTitle.setText("推荐");
                         } else if (name.equals("段子")) {
@@ -80,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         menu = new SlidingMenu(this);
         //设置侧滑的方向.左侧
         menu.setMode(SlidingMenu.LEFT);
-        // 设置触摸屏幕的模式
-//        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         // 设置滑动完剩余的宽度
         menu.setBehindOffset(200);
         // 设置渐入渐出效果的值
@@ -93,6 +104,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         menu.setMenu(view);
         //实例化控件
         initView();
+
+        //夜间模式
+        ThemeManager.registerThemeChangeListener(this);
+        supportActionBar = getSupportActionBar();
+        main_night_button.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
+                if (isChecked) {
+                    //开启夜间模式
+                    left_night.setImageResource(R.mipmap.night_open);
+                    ThemeManager.setThemeMode(ThemeManager.getThemeMode() == ThemeManager.ThemeMode.DAY
+                            ? ThemeManager.ThemeMode.NIGHT : ThemeManager.ThemeMode.DAY);
+                } else {
+                    //关闭夜间模式
+                    left_night.setImageResource(R.mipmap.night_colse);
+                    ThemeManager.setThemeMode(ThemeManager.getThemeMode() == ThemeManager.ThemeMode.DAY
+                            ? ThemeManager.ThemeMode.NIGHT : ThemeManager.ThemeMode.DAY);
+                }
+            }
+        });
     }
 
     private void initView() {
@@ -112,6 +143,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left_message.setOnClickListener(this);
         left_production.setOnClickListener(this);
         left_sz.setOnClickListener(this);
+
+        //夜间模式按钮
+        main_night_button = view.findViewById(R.id.main_night_button);
+        left_relativelayout = view.findViewById(R.id.left_relativelayout);
+        left_night = view.findViewById(R.id.left_night);
     }
 
     @OnClick({R.id.main_simpledraweeview, R.id.main_fb})
@@ -123,8 +159,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.main_fb:
                 //点击跳转到创作页面
-                Intent intent = new Intent(MainActivity.this, CreationActivity.class);
-                startActivity(intent);
+                if (mainTitle.equals("趣图")) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(MainActivity.this, CreationActivity.class);
+                    startActivity(intent);
+                }
                 break;
         }
     }
@@ -168,5 +209,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intentset);
                 break;
         }
+    }
+
+    //夜间模式
+    public void initTheme() {
+
+        mianRelativelayout.setBackgroundColor(getResources().getColor(ThemeManager.
+                getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
+//        mainHeadRl.setBackgroundColor(getResources().getColor(ThemeManager.
+//                getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
+        left_relativelayout.setBackgroundColor(getResources().getColor(ThemeManager.
+                getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
+        //消息页面夜间模式
+//        MessageActivity messageActivity = new MessageActivity();
+//        messageActivity.MessageNight();
+        // 设置标题栏颜色
+        if (supportActionBar != null) {
+            supportActionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(ThemeManager.getCurrentThemeRes(MainActivity.this, R.color.colorPrimary))));
+        }
+        // 设置状态栏颜色
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.setStatusBarColor(getResources().getColor(ThemeManager.getCurrentThemeRes(MainActivity.this, R.color.colorPrimary)));
+        }
+    }
+
+    @Override
+    public void onThemeChanged() {
+        initTheme();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ThemeManager.unregisterThemeChangeListener(this);
     }
 }

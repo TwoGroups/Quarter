@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.utils.nightmodel.ThemeManager;
 import com.erzu.quarter.view.fragment.MessageFragment;
 import com.erzu.quarter.view.fragment.PersonalFragment;
 
@@ -30,6 +31,7 @@ public class MessageActivity extends AppCompatActivity {
     ViewPager messageViewpager;
     List<Fragment> messageFragment;
     List<String> messageTitle;
+    LinearLayout message_linearlayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,13 @@ public class MessageActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         initFragment();
+        message_linearlayout = findViewById(R.id.message_linearlayout);
     }
+
+//    public void MessageNight() {
+//        message_linearlayout.setBackgroundColor(getResources().getColor(ThemeManager.
+//                getCurrentThemeRes(MessageActivity.this, R.color.backgroundColor)));
+//    }
 
     private void initFragment() {
         messageFragment = new ArrayList<>();
