@@ -30,10 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        //隐藏标题栏
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
     }
 
     @OnClick({R.id.login_back, R.id.we_chat_login, R.id.qq_login, R.id.other_login})

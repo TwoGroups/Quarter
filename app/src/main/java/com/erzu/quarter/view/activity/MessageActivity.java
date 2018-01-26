@@ -38,10 +38,6 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
         ButterKnife.bind(this);
-        //隐藏标题栏
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
         initFragment();
         message_linearlayout = findViewById(R.id.message_linearlayout);
     }

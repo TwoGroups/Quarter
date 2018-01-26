@@ -23,10 +23,6 @@ public class CreationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation);
         ButterKnife.bind(this);
-        //隐藏标题栏
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
     }
 
     @OnClick(R.id.creation_fh)

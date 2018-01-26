@@ -37,11 +37,6 @@ public class FindPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_password);
         ButterKnife.bind(this);
-        //隐藏标题栏
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
-
     }
 
     @OnClick({R.id.alert_back, R.id.has_account, R.id.alter_btn, R.id.visitor_login})

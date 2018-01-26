@@ -43,10 +43,6 @@ public class RegistActivity extends AppCompatActivity implements IRegistView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regist);
         ButterKnife.bind(this);
-        //隐藏标题栏
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
         presenter = new RegistPresenter(this);
     }
 
