@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SwitchButton main_night_button;
     RelativeLayout left_relativelayout;
     ImageView left_night;
+    private int indexes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
                     @Override
                     public void onTabChange(int position, final String name) {
+                        indexes = position;
                         if (name.equals("推荐")) {
                             mainTitle.setText("推荐");
                         } else if (name.equals("段子")) {
@@ -154,11 +156,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 menu.showMenu();
                 break;
             case R.id.main_fb:
-                //点击跳转到创作页面
-                if (mainTitle.equals("趣图")) {
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                if (indexes == 3) {
+                    //点击跳转到发表页面
+                    Intent intent = new Intent(MainActivity.this, PublishActivity.class);
                     startActivity(intent);
                 } else {
+                    //点击跳转到创作页面
                     Intent intent = new Intent(MainActivity.this, CreationActivity.class);
                     startActivity(intent);
                 }
