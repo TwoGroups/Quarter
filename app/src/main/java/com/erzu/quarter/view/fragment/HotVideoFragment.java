@@ -3,6 +3,7 @@ package com.erzu.quarter.view.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,7 @@ import butterknife.Unbinder;
 
 public class HotVideoFragment extends Fragment implements IVideoView {
     @BindView(R.id.frag_hot_view)
-    XRecyclerView fragHotView;
+    RecyclerView fragHotView;
     Unbinder unbinder;
     private VideoPresenter presenter;
     private int size = 1;
@@ -42,26 +43,20 @@ public class HotVideoFragment extends Fragment implements IVideoView {
         View view = View.inflate(getActivity(), R.layout.frag_hot_video, null);
         unbinder = ButterKnife.bind(this, view);
         data = new ArrayList<>();
-        fragHotView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        fragHotView.setPullRefreshEnabled(false);
-//        fragHotView.setLoadingMoreEnabled(true);
+        final StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        manager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
+        fragHotView.setLayoutManager(manager);
+        fragHotView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                manager.invalidateSpanAssignments();
+            }
+        });
         presenter = new VideoPresenter(this);
         presenter.getHotVideoData(size + "");
-//        fragHotView.setLoadingListener(new XRecyclerView.LoadingListener() {
-//            @Override
-//            public void onRefresh() {
-//                fragHotView.refreshComplete();
-//            }
-//
-//            @Override
-//            public void onLoadMore() {
-//                size++;
-//                presenter.getHotVideoData(size + "");
-//            }
-//        });
         return view;
     }
-
 
     @Override
     public void onDestroyView() {
@@ -71,11 +66,11 @@ public class HotVideoFragment extends Fragment implements IVideoView {
 
     @Override
     public void onSucceed(RecommendVideoBean videosBean) {
-//        fragHotView.loadMoreComplete();
-        data.addAll(videosBean.getData());
-        adapter = new HotVideoAdapter(getActivity(), data);
-        fragHotView.setAdapter(adapter);
-//        adapter.notifyDataSetChanged();
+        if (videosBean != null) {
+            data.addAll(videosBean.getData());
+            adapter = new HotVideoAdapter(getActivity(), data);
+            fragHotView.setAdapter(adapter);
+        }
     }
 
     @Override
