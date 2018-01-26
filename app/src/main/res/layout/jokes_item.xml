@@ -14,80 +14,64 @@
             android:id="@+id/jokes_pic"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            fresco:overlayImage="@mipmap/pic"
-            fresco:roundAsCircle="true"
             android:layout_centerVertical="true"
-            />
+            fresco:overlayImage="@mipmap/pic"
+            fresco:roundAsCircle="true" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/jokes_pic"
-            android:orientation="vertical"
             android:layout_centerVertical="true"
-           >
+            android:layout_toRightOf="@+id/jokes_pic"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/jokes_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="天蝎喝牛奶"
-                android:textSize="15sp"
                 android:layout_margin="10dp"
-                android:textColor="#f00" />
+                android:text="天蝎喝牛奶"
+                android:textColor="#f00"
+                android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/jokes_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="2018-12-12  12:21" />
         </LinearLayout>
-        <ImageView
-            android:id="@+id/jokes_dx"
+        <!--<ImageView-->
+        <!--android:id="@+id/jokes_jia"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:src="@mipmap/jia" />-->
+        <include
             android:layout_width="50dp"
             android:layout_height="50dp"
+            layout="@layout/item_menu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:visibility="gone"
-            android:src="@mipmap/d_dx" />
-        <ImageView
-            android:id="@+id/jokes_fx"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:visibility="gone"
-            android:src="@mipmap/d_fx" />
-        <ImageView
-            android:id="@+id/jokes_xx"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:visibility="gone"
-            android:src="@mipmap/d_xx" />
-        <ImageView
-            android:id="@+id/jokes_jia"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/jia" />
+            />
+
+        <TextView
+            android:id="@+id/jokes_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/jokes_pic"
+            android:layout_toEndOf="@+id/jokes_pic"
+            android:text="2018-12-12  12:21"
+            android:textSize="15sp" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/jokes_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="有一个人叫真咯嗦，娶了个老婆叫要你管，生了个儿子叫麻烦。有一天麻烦不见了！夫妻俩就去报案。警察问爸爸：请问这位男士你叫啥名字？爸爸说:真咯嗦。警察很生气，然后 他又问妈妈叫啥名字。妈妈说:要你管。警察非常生气的说:你们要干什么?夫妻俩说：找麻烦。"
         android:textColor="#000"
-        android:textSize="20sp"
-        android:text="有一个人叫真咯嗦，娶了个老婆叫要你管，生了个儿子叫麻烦。有一天麻烦不见了！夫妻俩就去报案。警察问爸爸：请问这位男士你叫啥名字？爸爸说:真咯嗦。警察很生气，然后 他又问妈妈叫啥名字。妈妈说:要你管。警察非常生气的说:你们要干什么?夫妻俩说：找麻烦。" />
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
-        android:background="#847c7c"/>
+        android:background="#847c7c" />
 
 </LinearLayout>

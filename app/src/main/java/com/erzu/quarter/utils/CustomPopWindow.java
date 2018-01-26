@@ -245,7 +245,6 @@ public class CustomPopWindow {
             return this;
         }
 
-
         public CustomPopWindow create(){
             //构建PopWindow
             mCustomPopWindow.build();

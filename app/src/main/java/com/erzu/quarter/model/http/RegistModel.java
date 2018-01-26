@@ -20,7 +20,6 @@ public class RegistModel {
         map.put("source", "android");
         map.put("regType","0");
 
-
         APIFactory.getInstance().get1("/quarter/register", map, new AbstractObserver<RegistBean>() {
 
             @Override

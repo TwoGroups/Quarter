@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.model.bean.EventBeanLogin;
 import com.erzu.quarter.utils.nightmodel.ThemeManager;
 import com.erzu.quarter.view.fragment.JokesFragment;
 import com.erzu.quarter.view.fragment.OddphotosFragment;
@@ -25,6 +27,9 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.suke.widget.SwitchButton;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,13 +59,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RelativeLayout left_relativelayout;
     ImageView left_night;
     private int indexes;
+    private SimpleDraweeView left_tx;
+    private TextView left_usersname;
+    private String nickName;
+    private String pic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
+        EventBus.getDefault().register(this);
         mainBottomtabbar.init(getSupportFragmentManager())
                 .setImgSize(50, 50)
                 .setFontSize(16)
@@ -122,12 +131,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+
+
+
     }
 
     private void initView() {
         LinearLayout left_login = view.findViewById(R.id.left_login);
-        SimpleDraweeView left_tx = view.findViewById(R.id.left_tx);
-        TextView left_usersname = view.findViewById(R.id.left_usersname);
+        left_tx = view.findViewById(R.id.left_tx);
+        left_usersname = view.findViewById(R.id.left_usersname);
         LinearLayout left_attention = view.findViewById(R.id.left_attention);
         LinearLayout left_collect = view.findViewById(R.id.left_collect);
         LinearLayout left_search = view.findViewById(R.id.left_search);
@@ -147,6 +160,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left_relativelayout = view.findViewById(R.id.left_relativelayout);
         left_night = view.findViewById(R.id.left_night);
     }
+
+    /**
+     * 接受登陆界面传来的网名与头像
+     * @param eventBeanLogin
+     */
+    @Subscribe(sticky = true)
+    public void eventBus(EventBeanLogin eventBeanLogin){
+    pic = eventBeanLogin.getPic();
+    nickName = eventBeanLogin.getNickName();
+
+    Log.e("", "头像"+pic );
+    Log.e("", "网名: "+nickName );
+
+    //展示网名头像
+    left_usersname.setText(nickName);
+    left_tx.setImageURI(pic);
+    mainSimpledraweeview.setImageURI(pic);
+
+    Log.e("", "-----------"+nickName );
+
+
+}
+
+
 
     @OnClick({R.id.main_simpledraweeview, R.id.main_fb})
     public void onViewClicked(View view) {
@@ -242,5 +279,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onDestroy() {
         super.onDestroy();
         ThemeManager.unregisterThemeChangeListener(this);
+    EventBus.getDefault().unregister(this);
     }
+
 }
