@@ -104,7 +104,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
         holder.sdv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EventBus.getDefault().postSticky(new EventBean(list.get(position).getCover()));
+                EventBus.getDefault().postSticky(new EventBean(list.get(position).getCover(), list.get(position).getUser().getNickname()));
                 context.startActivity(new Intent(context, UserActivity.class));
             }
         });

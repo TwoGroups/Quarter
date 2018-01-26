@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.EventBean;
@@ -33,6 +34,8 @@ public class UserActivity extends AppCompatActivity implements IRecommendVeiw {
     RecyclerView worksRec;
     @BindView(R.id.head_sdv)
     SimpleDraweeView headSdv;
+    @BindView(R.id.textView)
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +50,13 @@ public class UserActivity extends AppCompatActivity implements IRecommendVeiw {
     @Subscribe(sticky = true)
     public void event(EventBean eventBean) {
         String cover = eventBean.getCover();
+        String name = eventBean.getName();
         DraweeController controller = Fresco.newDraweeControllerBuilder()
                 .setUri(cover)
                 .setAutoPlayAnimations(true)
                 .build();
         headSdv.setController(controller);
+        textView.setText(name);
     }
 
     @Override

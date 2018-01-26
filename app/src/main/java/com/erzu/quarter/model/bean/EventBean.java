@@ -5,17 +5,27 @@ package com.erzu.quarter.model.bean;
  */
 
 public class EventBean {
-    private  String cover;
+    private String cover;
+    private String name;
 
-    public EventBean(String cover) {
+    public EventBean(String cover, String name) {
         this.cover = cover;
+        this.name = name;
     }
 
     public String getCover() {
         return cover;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setCover(String cover) {
         this.cover = cover;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
