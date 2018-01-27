@@ -120,10 +120,6 @@ public class LoginActivity extends AppCompatActivity {
 
                             EventBus.getDefault().postSticky(new EventBeanLogin(pic,nickName));
 
-
-//                            Toast.makeText(LoginActivity.this, "你好，" + nickName,
-//                                    Toast.LENGTH_LONG).show();
-//                            Log.e(TAG, "-------"+ pic);
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.putExtra("nickName", nickName);
                             startActivity(intent);
