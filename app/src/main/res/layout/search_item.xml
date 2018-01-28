@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            fresco:roundAsCircle="true"
+            android:layout_alignParentLeft="true"
+            app:overlayImage="@mipmap/pic"
+            android:id="@+id/simpleDraweeView" />
+
+        <TextView
+            android:layout_toRightOf="@+id/simpleDraweeView"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:text="李永超"
+            android:id="@+id/search_title" />
+
+        <TextView
+            android:id="@+id/search_del"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:text="x" />
+    </RelativeLayout>
+</LinearLayout>
