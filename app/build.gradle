@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -56,4 +55,6 @@ dependencies {
     compile 'com.jcodecraeer:xrecyclerview:1.5.2'
     compile 'com.github.zcweng:switch-button:0.0.3@aar'
     compile 'org.greenrobot:eventbus:3.1.1'
+    implementation files('libs/MobCommons-2017.1201.1507.jar')
+    implementation files('libs/MobTools-2017.1201.1507.jar')
 }

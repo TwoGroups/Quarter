@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import android.widget.Toast;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.JokesBean;
-import com.erzu.quarter.view.activity.UserActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
@@ -34,7 +32,6 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.MyViewHodler
     private static List<ImageView> imageViews = new ArrayList<>();
     private static List<TextView> textViews = new ArrayList<>();
     private boolean isMenuOpen = false;
-
     public JokesAdapter(Context context, List<JokesBean.DataBean> list) {
         this.context = context;
         this.list = list;
@@ -55,13 +52,6 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.MyViewHodler
         holder.jokes_time.setText(list.get(position).getCreateTime());
         holder.jokes_content.setText(list.get(position).getContent());
         MyViewHodler.imgPublish.setOnClickListener(this);
-        holder.jokes_pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                context.startActivity(new Intent(context, UserActivity.class));
-            }
-        });
-
 
     }
 
@@ -72,30 +62,29 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.MyViewHodler
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
+        switch (view.getId()){
             case R.id.img_publish:
                 if (!isMenuOpen) {
                     showOpenAnim(160);
                     MyViewHodler.imgPublish.setImageResource(R.mipmap.jia);
-                } else {
+                }else {
                     showCloseAnim(160);
                     MyViewHodler.imgPublish.setImageResource(R.mipmap.jian);
                 }
                 break;
             case R.id.timg:
-                Toast.makeText(context, "点击了1", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"点击了1",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.warning:
-                Toast.makeText(context, "点击了2", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"点击了2",Toast.LENGTH_SHORT).show();
 
                 break;
             case R.id.banned:
-                Toast.makeText(context, "点击了3", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"点击了3",Toast.LENGTH_SHORT).show();
 
                 break;
         }
     }
-
     //打开
     private void showOpenAnim(int dp) {
         MyViewHodler.timg.setVisibility(View.VISIBLE);
@@ -110,7 +99,7 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.MyViewHodler
             AnimatorSet set = new AnimatorSet();
             double a = -(25 * Math.PI / 180 * (i + 1));
             double x = a * dip2px(dp);
-            Log.e("aaaaa", x + "");
+            Log.e("aaaaa", x+"");
             //Log.e("aaa",a+"");
             // double y = b * dip2px(dp);
             //ObjectAnimator.ofFloat(textViews.get(i), "translationY", (float) (y * 0.25), (float) y),
@@ -157,7 +146,6 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.MyViewHodler
         rotate.start();
 
     }
-
     //关闭
     private void showCloseAnim(int dp) {
         for (int i = 0; i < imageViews.size(); i++) {
@@ -202,7 +190,6 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.MyViewHodler
                 public void onAnimationCancel(Animator animation) {
 
                 }
-
                 @Override
                 public void onAnimationRepeat(Animator animation) {
 
@@ -215,31 +202,28 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesAdapter.MyViewHodler
         //rotate.setInterpolator(new BounceInterpolator());
         rotate.start();
     }
-
     //转换dp参数为px值
     private int dip2px(int value) {
         float density = context.getResources()
                 .getDisplayMetrics().density;
         return (int) (density * value + 0.5f);
     }
-
-    static class MyViewHodler extends RecyclerView.ViewHolder {
+   static class MyViewHodler extends RecyclerView.ViewHolder {
         private SimpleDraweeView jokes_pic;
         private TextView jokes_name;
         private TextView jokes_time;
         private TextView jokes_content;
-        //        private ImageView jokes_jia;
+//        private ImageView jokes_jia;
 //        private ImageView jokes_dx;
 //        private ImageView jokes_fx;
 //        private ImageView jokes_xx;
-        static ImageView timg;
-        static ImageView warning;
-        static ImageView banned;
-        static TextView tvTimg;
-        static TextView tvWarning;
-        static TextView tvBanned;
-        static ImageView imgPublish;
-
+       static ImageView timg;
+       static ImageView warning;
+       static ImageView banned;
+       static TextView tvTimg;
+       static TextView tvWarning;
+       static TextView tvBanned;
+       static ImageView imgPublish;
         public MyViewHodler(View itemView) {
             super(itemView);
 
