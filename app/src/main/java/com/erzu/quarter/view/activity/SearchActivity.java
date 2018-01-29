@@ -116,7 +116,6 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
     @Override
     public void Succeed(SearchHistoryBean searchHistoryBean) {
 
-
         searchHistoryAdapter.addData(searchHistoryBean.getData());
         mHistorySearch.setAdapter(searchHistoryAdapter);
         searchHistoryAdapter.notifyDataSetChanged();
@@ -128,5 +127,5 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
         searchInterstedAdapter.addData(searchInterstedBean.getData());
         mInsterstedSearch.setAdapter(searchInterstedAdapter);
         searchInterstedAdapter.notifyDataSetChanged();
-    }
+     }
 }
