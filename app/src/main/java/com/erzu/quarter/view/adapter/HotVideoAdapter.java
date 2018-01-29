@@ -1,20 +1,21 @@
 package com.erzu.quarter.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.RecommendVideoBean;
+import com.erzu.quarter.view.activity.VideoDetailsActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import cn.jzvd.JZVideoPlayerStandard;
 
 /**
  * Created by War on 2018/1/22.
@@ -37,17 +38,15 @@ public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.videoPlayer.setUp(list.get(position).getVideoUrl(), JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "");
-        ImageLoader.getInstance().displayImage(list.get(position).getCover(), holder.videoPlayer.thumbImageView);
-        holder.videoItemTitle.setText(list.get(position).getCreateTime());
+        ImageLoader.getInstance().displayImage(list.get(position).getCover(), holder.videoImg);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //                new Intent()
+                Intent intent = new Intent(context, VideoDetailsActivity.class);
+                context.startActivity(intent);
             }
         });
     }
-
 
     @Override
     public int getItemCount() {
@@ -55,10 +54,10 @@ public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyView
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.videoplayer)
-        JZVideoPlayerStandard videoPlayer;
-        @BindView(R.id.video_item_title)
-        TextView videoItemTitle;
+        /* @BindView(R.id.videoplayer)
+         JZVideoPlayerStandard videoPlayer;*/
+        @BindView(R.id.video_img)
+        ImageView videoImg;
 
         MyViewHolder(View view) {
             super(view);

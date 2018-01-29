@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.erzu.quarter">
+          package="com.erzu.quarter">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
 
 
 
@@ -31,40 +32,45 @@
             android:name=".view.activity.MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.CreationActivity" />
-        <activity android:name=".view.activity.LoginActivity" />
-        <activity android:name=".view.activity.AttentionActivity" />
-        <activity android:name=".view.activity.CollectActivity" />
-        <activity android:name=".view.activity.SearchActivity" />
-        <activity android:name=".view.activity.MessageActivity" />
-        <activity android:name=".view.activity.ProductionActivity" />
-        <activity android:name=".view.activity.SetActivity" />
-        <activity android:name=".view.activity.UserActivity" />
-        <activity android:name=".view.activity.ActivityLogin"></activity>
-        <activity android:name=".view.activity.RegistActivity"></activity>
-        <activity android:name=".view.activity.FindPasswordActivity"></activity>
-        <activity android:name=".view.activity.PublishActivity"></activity>
+        <activity android:name=".view.activity.CreationActivity"/>
+        <activity android:name=".view.activity.LoginActivity"/>
+        <activity android:name=".view.activity.AttentionActivity"/>
+        <activity android:name=".view.activity.CollectActivity"/>
+        <activity android:name=".view.activity.SearchActivity"/>
+        <activity android:name=".view.activity.MessageActivity"/>
+        <activity android:name=".view.activity.ProductionActivity"/>
+        <activity android:name=".view.activity.SetActivity"/>
+        <activity android:name=".view.activity.UserActivity"/>
+        <activity android:name=".view.activity.ActivityLogin"/>
+        <activity android:name=".view.activity.RegistActivity"/>
+        <activity android:name=".view.activity.FindPasswordActivity"/>
+        <activity android:name=".view.activity.PublishActivity"/>
 
         <!-- 注册SDKActivity -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="tencent1105602574" /> <!-- 开放平台获取的APPID -->
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="tencent1105602574"/> <!-- 开放平台获取的APPID -->
             </intent-filter>
         </activity>
-        <activity android:name="com.tencent.connect.common.AssistActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".view.activity.VideoDetailsActivity">
+        </activity>
 
 
 

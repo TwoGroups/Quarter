@@ -4,15 +4,13 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
-    <cn.jzvd.JZVideoPlayerStandard
+    <ImageView
+        android:id="@+id/video_img"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:layout_height="wrap_content"/>
+    <!--<cn.jzvd.JZVideoPlayerStandard
         android:id="@+id/videoplayer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/video_item_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="正在加载..."/>
+        android:layout_height="wrap_content"/>-->
 </LinearLayout>
