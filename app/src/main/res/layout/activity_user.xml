@@ -107,13 +107,13 @@
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/head_sdv"
-        android:layout_width="120dp"
-        fresco:roundAsCircle="true"
-        android:layout_height="120dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignStart="@+id/fanhui"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="45dp"
-        app:placeholderImage="@mipmap/pic"/>
+        android:layout_marginTop="61dp"
+        app:placeholderImage="@mipmap/pic"
+        fresco:roundAsCircle="true" />
 
 
     <RelativeLayout

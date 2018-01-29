@@ -16,6 +16,8 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
+import cn.sharesdk.onekeyshare.OnekeyShare;
+
 /**
  * Created by lenovo on 2018/1/23.
  */
@@ -44,7 +46,7 @@ public class OddphotosAdapter extends RecyclerView.Adapter<OddphotosAdapter.MyHo
     }
 
     @Override
-    public void onBindViewHolder(MyHodler holder, int position) {
+    public void onBindViewHolder(MyHodler holder, final int position) {
 
 
         holder.mTitleText.setText(list.get(position).getUser().getNickname());
@@ -52,6 +54,39 @@ public class OddphotosAdapter extends RecyclerView.Adapter<OddphotosAdapter.MyHo
         holder.mText01Qutu.setText(list.get(position).getWorkDesc());
         holder.mText02Qutu.setText(list.get(position).getWorkDesc());
 //        holder.mTextQutu.setText(list.get(position).getComments().get(position).getContent());
+        holder.mBtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShareMob();
+            }
+
+            private void ShareMob() {
+
+                OnekeyShare oks = new OnekeyShare();
+                //关闭sso授权
+                oks.disableSSOWhenAuthorize();
+                // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
+                oks.setTitle(list.get(position).getCover());
+                // titleUrl是标题的网络链接，QQ和QQ空间等使用
+                oks.setTitleUrl(list.get(position).getVideoUrl());
+                // text是分享文本，所有平台都需要这个字段
+                oks.setText(list.get(position).getCover());
+                // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+                //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+                // url仅在微信（包括好友和朋友圈）中使用
+                oks.setUrl(list.get(position).getVideoUrl());
+                // comment是我对这条分享的评论，仅在人人网和QQ空间使用
+                oks.setComment(list.get(position).getCover());
+                // site是分享此内容的网站名称，仅在QQ空间使用
+                oks.setSite(context.getString(R.string.app_name));
+                // siteUrl是分享此内容的网站地址，仅在QQ空间使用
+                oks.setSiteUrl(list.get(position).getVideoUrl());
+
+                // 启动分享GUI
+                oks.show(context);
+
+            }
+        });
     }
 
     @Override
