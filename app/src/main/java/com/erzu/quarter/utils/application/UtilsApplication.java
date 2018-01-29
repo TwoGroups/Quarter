@@ -20,11 +20,14 @@ import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 
 import java.io.File;
 
+import cn.sharesdk.framework.ShareSDK;
+
 /**
  * Created by hp on 2018/1/19.
  */
 
 public class UtilsApplication extends Application {
+    private static final String APP_KEY = "23b7f7b1307bc";
     @Override
     public void onCreate() {
         super.onCreate();
