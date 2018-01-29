@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/simpleDraweeView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:padding="10dp"
+            app:overlayImage="@mipmap/pic"
+            fresco:roundAsCircle="true" />
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_width="200dp"
+            android:layout_toRightOf="@+id/simpleDraweeView"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout">
+            <TextView
+                android:id="@+id/search_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/simpleDraweeView"
+                android:gravity="center_vertical"
+                android:text="李永超" />
+            <TextView
+                android:id="@+id/search_mesg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/textView3"
+                android:gravity="center_vertical"
+                android:text="fdgdfgdfgdfg" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:background="@drawable/search_guanzhu"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="+" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="关注" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>
