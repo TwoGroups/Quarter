@@ -26,7 +26,6 @@ public class SearchInterstedPresenter {
         this.interstedModel = new InterstedModel();
     }
 
-
     public void getSearchInterstedData(){
 
          interstedModel.searchIntersted(new InterstedModel.SearchInterstedModelCallBack() {

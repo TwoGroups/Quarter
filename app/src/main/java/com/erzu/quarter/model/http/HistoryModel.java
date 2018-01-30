@@ -16,6 +16,7 @@ public class HistoryModel {
         HashMap<String,String> map=new HashMap<>();
         map.put("source","android");
         map.put("appVersion","101");
+        map.put("keyWords","李");
         APIFactory.getInstance().get1("/quarter/searchFriends", map, new AbstractObserver<SearchHistoryBean>() {
             @Override
             public void onSuccess(SearchHistoryBean historyBean) {

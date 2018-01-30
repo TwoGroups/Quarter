@@ -23,13 +23,12 @@ public class SearchPresenter {
 
     public void getSearchData(String keyWords){
 
-
         searchModel.search(keyWords,new SearchModel.SearchModelCallBack() {
             @Override
             public void onSuccess(SearchBean searchBean) {
 
                     iSearchView.Succeed(searchBean);
-                System.out.println("searchBean"+searchBean);
+                //System.out.println("searchBean"+searchBean);
             }
 
             @Override
