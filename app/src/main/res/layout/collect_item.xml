@@ -69,7 +69,7 @@
             android:id="@+id/btn1"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/select_xin"
+            android:background="@drawable/recommend_xin"
             android:button="@null" />
 
         <TextView
@@ -83,7 +83,7 @@
             android:id="@+id/btn2"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/select_xingxing"
+            android:background="@drawable/recommend_xingxing"
             android:button="@null" />
 
         <TextView
