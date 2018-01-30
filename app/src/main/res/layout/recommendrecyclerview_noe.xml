@@ -70,7 +70,7 @@
             android:layout_width="@dimen/Radio_width"
             android:layout_height="@dimen/Radio_height"
             android:button="@null"
-            android:drawableTop="@drawable/select_xin" />
+           android:background="@drawable/recommend_xin" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
             android:id="@+id/btn2"
             android:layout_width="@dimen/Radio_width"
             android:layout_height="@dimen/Radio_height"
-            android:background="@drawable/select_xingxing"
+            android:background="@drawable/recommend_xingxing"
             android:button="@null" />
 
         <TextView

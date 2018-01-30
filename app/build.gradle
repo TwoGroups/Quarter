@@ -58,4 +58,5 @@ dependencies {
     implementation files('libs/MobCommons-2017.1201.1507.jar')
     implementation files('libs/MobTools-2017.1201.1507.jar')
     implementation files('libs/ShareSDK-GooglePlus-3.1.2.jar')
+
 }
