@@ -33,6 +33,7 @@ public class UtilsApplication extends Application {
         super.onCreate();
         Fresco.initialize(this);
         initImageloader();
+
     }
 
     public void initImageloader() {

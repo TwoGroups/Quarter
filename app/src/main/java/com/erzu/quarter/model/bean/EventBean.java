@@ -7,14 +7,24 @@ package com.erzu.quarter.model.bean;
 public class EventBean {
     private String cover;
     private String name;
+    private String url;
 
-    public EventBean(String cover, String name) {
+    public EventBean(String cover, String name, String url) {
         this.cover = cover;
         this.name = name;
+        this.url = url;
     }
 
     public String getCover() {
         return cover;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getName() {
