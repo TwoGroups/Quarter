@@ -106,7 +106,6 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
 
     @Override
     public void Succeed(SearchBean searchBean) {
-        System.out.println("搜索到的："+searchBean.getData().get(0).getNickname());
         searchAdapter.addData(searchBean.getData());
         mHistorySearch.setAdapter(searchAdapter);
         searchAdapter.notifyDataSetChanged();
