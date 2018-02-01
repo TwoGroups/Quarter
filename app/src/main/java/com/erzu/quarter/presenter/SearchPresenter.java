@@ -1,10 +1,7 @@
 package com.erzu.quarter.presenter;
 
-import com.erzu.quarter.model.bean.JokesBean;
 import com.erzu.quarter.model.bean.SearchBean;
-import com.erzu.quarter.model.http.JokesModel;
 import com.erzu.quarter.model.http.SearchModel;
-import com.erzu.quarter.view.IView.IJokesView;
 import com.erzu.quarter.view.IView.ISearchView;
 
 /**
@@ -23,13 +20,12 @@ public class SearchPresenter {
 
     public void getSearchData(String keyWords){
 
-
         searchModel.search(keyWords,new SearchModel.SearchModelCallBack() {
             @Override
             public void onSuccess(SearchBean searchBean) {
 
                     iSearchView.Succeed(searchBean);
-                System.out.println("searchBean"+searchBean);
+                //System.out.println("searchBean"+searchBean);
             }
 
             @Override

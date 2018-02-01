@@ -62,6 +62,7 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
         mSearchImageSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Toast.makeText(SearchActivity.this, ""+mSearchTextSearch.getText().toString(), Toast.LENGTH_SHORT).show();
                 searchPresenter.getSearchData(mSearchTextSearch.getText().toString());
             }
         });
@@ -85,8 +86,12 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
             public void onClick(View v) {
                 searchHistoryAdapter.clear();
                 searchHistoryAdapter.notifyDataSetChanged();
+                searchAdapter.clear();
+                searchAdapter.notifyDataSetChanged();
             }
         });
+
+
     }
 
     private void initView() {
@@ -101,11 +106,9 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
 
     @Override
     public void Succeed(SearchBean searchBean) {
-         searchAdapter.addData(searchBean.getData());
+        searchAdapter.addData(searchBean.getData());
         mHistorySearch.setAdapter(searchAdapter);
         searchAdapter.notifyDataSetChanged();
-
-//        System.out.println("123"+searchBean.getData());
     }
 
     @Override
@@ -115,7 +118,6 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
 
     @Override
     public void Succeed(SearchHistoryBean searchHistoryBean) {
-
         searchHistoryAdapter.addData(searchHistoryBean.getData());
         mHistorySearch.setAdapter(searchHistoryAdapter);
         searchHistoryAdapter.notifyDataSetChanged();

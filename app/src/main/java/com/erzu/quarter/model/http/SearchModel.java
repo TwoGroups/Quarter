@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class SearchModel {
 
-    public  void search(String keyWords,final SearchModelCallBack searchModelCallBack){
+    public  void search(final String keyWords, final SearchModelCallBack searchModelCallBack){
         HashMap<String,String> map=new HashMap<>();
         map.put("keyWords",keyWords);
         map.put("source","android");
@@ -23,6 +23,7 @@ public class SearchModel {
             public void onSuccess(SearchBean searchBean) {
 
                  searchModelCallBack.onSuccess(searchBean);
+
             }
 
             @Override

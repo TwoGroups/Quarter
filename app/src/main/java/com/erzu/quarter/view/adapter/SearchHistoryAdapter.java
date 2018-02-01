@@ -29,16 +29,18 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdap
 
     }
     public void  clear(){
-        list.clear();
-        notifyDataSetChanged();
-    }
-    public void addData(List<SearchHistoryBean.DataBean> dataBeans) {
-        if (list == null) {
-            this.list = new ArrayList<>();
-            list.addAll(dataBeans);
+        if (list!=null){
+            list.clear();
             notifyDataSetChanged();
         }
 
+    }
+    public void addData(List<SearchHistoryBean.DataBean> dataBeans) {
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        list.addAll(dataBeans);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -49,9 +51,16 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdap
     }
 
     @Override
-    public void onBindViewHolder(MyViewHodler holder, int position) {
+    public void onBindViewHolder(MyViewHodler holder, final int position) {
 
          holder.mTitleSearch.setText(list.get(position).getNickname());
+         holder.mDelSearch.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 list.remove(position);
+                 notifyDataSetChanged();
+             }
+         });
     }
 
     @Override

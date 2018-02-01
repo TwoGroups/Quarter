@@ -17,13 +17,10 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
-/**
- *
- */
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHodler> {
     private Context context;
-   private List<SearchBean.DataBean> list;
+    private List<SearchBean.DataBean> list;
 //    private View view;
 
 
@@ -40,7 +37,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHodl
         }
 
     }
+    public void  clear(){
+        if (list!=null){
+            list.clear();
+            notifyDataSetChanged();
+        }
 
+    }
     @Override
     public MyViewHodler onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -49,13 +52,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHodl
     }
 
     @Override
-    public void onBindViewHolder(MyViewHodler holder, int position) {
-
-
+    public void onBindViewHolder(MyViewHodler holder, final int position) {
 
         String nickname = list.get(position).getNickname();
-        Log.e(TAG, "数据"+nickname  );
+        Log.e(TAG, "数据"+nickname);
         holder.search_title.setText(nickname);
+        holder.mDelSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                list.remove(position);
+                notifyDataSetChanged();
+            }
+        });
 
     }
 
