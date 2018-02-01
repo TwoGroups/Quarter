@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="war.sun.com.car.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/main_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/main_back"
+            android:layout_width="@dimen/main_back_btn"
+            android:layout_height="@dimen/main_back_btn"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/main_set_padding"
+            android:src="@mipmap/back_btn"/>
+
+        <TextView
+            android:id="@+id/title_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/main_title"
+            android:textSize="@dimen/main_title_text_size"/>
+
+        <TextView
+            android:id="@+id/main_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/main_set_padding"
+            android:text="@string/main_self_set"
+            android:textColor="@color/selfSetColor"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/main_find_layout"
+        android:layout_width="@dimen/main_find_width"
+        android:layout_height="@dimen/main_find_height"
+        android:layout_below="@+id/main_title"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/relative_bg"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/main_find_icon"
+            android:layout_width="@dimen/main_find_icon"
+            android:layout_height="@dimen/main_find_icon"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/search_blue"/>
+
+        <EditText
+            android:id="@+id/main_find_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/main_edit_text"
+            android:textColorHint="@color/findHintText"
+            android:textSize="@dimen/main_find_text_size"/>
+
+        <ImageView
+            android:id="@+id/main_find_say_icon"
+            android:layout_width="@dimen/main_find_icon"
+            android:layout_height="@dimen/main_find_icon"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/micro_phone"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/main_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_find_layout">
+    </ListView>
+</RelativeLayout>

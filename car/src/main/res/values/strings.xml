@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Car</string>
+    <string name="main_title">添加维修配件</string>
+    <string name="main_self_set">自定义</string>
+    <string name="main_edit_text">请输入项目名称</string>
+</resources>

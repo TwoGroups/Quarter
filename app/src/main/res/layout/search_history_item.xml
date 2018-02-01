@@ -31,6 +31,7 @@
            android:layout_width="80dp"
            android:layout_height="80dp"
            android:layout_alignParentTop="true"
+           android:layout_toEndOf="@+id/textView3"
            android:layout_alignParentRight="true"
            android:gravity="center"
            android:text="x" />

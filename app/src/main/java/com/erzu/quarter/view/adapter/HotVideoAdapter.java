@@ -37,12 +37,16 @@ public class HotVideoAdapter extends RecyclerView.Adapter<HotVideoAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         ImageLoader.getInstance().displayImage(list.get(position).getCover(), holder.videoImg);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, VideoDetailsActivity.class);
+                intent.putExtra("cover", list.get(position).getCover());
+                intent.putExtra("nickname", list.get(position).getUser().getNickname());
+                intent.putExtra("url", list.get(position).getVideoUrl());
+                intent.putExtra("title",list.get(position).getWorkDesc());
                 context.startActivity(intent);
             }
         });

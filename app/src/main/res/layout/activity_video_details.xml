@@ -10,7 +10,9 @@
     <RelativeLayout
         android:id="@+id/video_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:id="@+id/details_back"
@@ -20,6 +22,7 @@
             android:src="@mipmap/return_back"/>
 
         <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/details_back"
@@ -38,22 +41,23 @@
                 android:id="@+id/btn_dislike"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/btn_share"
                 android:background="@drawable/qt_shxin"
-                android:button="@null"/>
-
-            <RadioButton
-                android:id="@+id/btn_share"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@mipmap/raw_1499995160"
                 android:button="@null"/>
         </RadioGroup>
 
+        <Button
+            android:id="@+id/btn_share"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/simpleDraweeView2"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/radio_group"
+            android:background="@mipmap/raw_1499995160"/>
+
         <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/simpleDraweeView2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
@@ -68,11 +72,28 @@
         android:layout_height="200dp"
         android:layout_below="@+id/video_title">
     </cn.jzvd.JZVideoPlayerStandard>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/video_play"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_null"
+            android:layout_centerInParent="true"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/raw_1500033586"/>
+        <TextView
+            android:id="@+id/text_null"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_null"/>
+    </RelativeLayout>
 
-    <ListView
+   <!-- <ListView
         android:id="@+id/video_comment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/video_play">
-    </ListView>
+    </ListView>-->
 </RelativeLayout>

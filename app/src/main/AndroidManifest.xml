@@ -71,10 +71,6 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <activity android:name=".view.activity.VideoDetailsActivity">
         </activity>
-
-
-
-
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -96,6 +92,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
     </application>
-
 </manifest>
