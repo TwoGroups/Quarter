@@ -149,7 +149,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left_message.setOnClickListener(this);
         left_production.setOnClickListener(this);
         left_sz.setOnClickListener(this);
-
         //夜间模式按钮
         main_night_button = view.findViewById(R.id.main_night_button);
         left_relativelayout = view.findViewById(R.id.left_relativelayout);
@@ -168,7 +167,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.e("", "头像" + pic);
         Log.e("", "网名: " + nickName);
-
         //展示网名头像
         left_usersname.setText(nickName);
         left_tx.setImageURI(pic);
