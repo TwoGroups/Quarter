@@ -12,10 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.model.bean.EventBeanLogin;
 import com.erzu.quarter.model.bean.LoginBean;
 import com.erzu.quarter.presenter.LogInPresenter;
 import com.erzu.quarter.utils.SharedPrefsUtil;
 import com.erzu.quarter.view.IView.ILoginView;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -89,6 +92,7 @@ public class ActivityLogin extends AppCompatActivity implements ILoginView {
     public void onSucceed(LoginBean bean) {
         if (bean.getCode().equals("0")) {
             //登录成功跳转
+            EventBus.getDefault().postSticky(new EventBeanLogin(bean.getData().getIcon(),bean.getData().getNickname()));
             Intent login = new Intent(ActivityLogin.this, MainActivity.class);
             startActivity(login);
             //存储数据，在MySetting文件中存储键值对("color","red")

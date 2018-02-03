@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -131,10 +130,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
-
-
-
-
     }
 
     private void initView() {
@@ -163,26 +158,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 接受登陆界面传来的网名与头像
+     *
      * @param eventBeanLogin
      */
     @Subscribe(sticky = true)
-    public void eventBus(EventBeanLogin eventBeanLogin){
-    pic = eventBeanLogin.getPic();
-    nickName = eventBeanLogin.getNickName();
+    public void eventBus(EventBeanLogin eventBeanLogin) {
+        pic = eventBeanLogin.getPic();
+        nickName = eventBeanLogin.getNickName();
 
-    Log.e("", "头像"+pic );
-    Log.e("", "网名: "+nickName );
+        Log.e("", "头像" + pic);
+        Log.e("", "网名: " + nickName);
 
-    //展示网名头像
-    left_usersname.setText(nickName);
-    left_tx.setImageURI(pic);
-    mainSimpledraweeview.setImageURI(pic);
-
-    Log.e("", "-----------"+nickName );
-
-
-}
-
+        //展示网名头像
+        left_usersname.setText(nickName);
+        left_tx.setImageURI(pic);
+        mainSimpledraweeview.setImageURI(pic);
+        Log.e("", "-----------" + nickName);
+    }
 
 
     @OnClick({R.id.main_simpledraweeview, R.id.main_fb})
@@ -252,13 +244,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mianRelativelayout.setBackgroundColor(getResources().getColor(ThemeManager.
                 getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
-//        mainHeadRl.setBackgroundColor(getResources().getColor(ThemeManager.
-//                getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
+        //        mainHeadRl.setBackgroundColor(getResources().getColor(ThemeManager.
+        //                getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
         left_relativelayout.setBackgroundColor(getResources().getColor(ThemeManager.
                 getCurrentThemeRes(MainActivity.this, R.color.backgroundColor)));
         //消息页面夜间模式
-//        MessageActivity messageActivity = new MessageActivity();
-//        messageActivity.MessageNight();
+        //        MessageActivity messageActivity = new MessageActivity();
+        //        messageActivity.MessageNight();
         // 设置标题栏颜色
         if (supportActionBar != null) {
             supportActionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(ThemeManager.getCurrentThemeRes(MainActivity.this, R.color.colorPrimary))));
@@ -279,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onDestroy() {
         super.onDestroy();
         ThemeManager.unregisterThemeChangeListener(this);
-    EventBus.getDefault().unregister(this);
+        EventBus.getDefault().unregister(this);
     }
 
 }
