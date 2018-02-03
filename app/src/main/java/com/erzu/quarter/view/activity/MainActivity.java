@@ -1,5 +1,6 @@
 package com.erzu.quarter.view.activity;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.erzu.quarter.R;
 import com.erzu.quarter.model.bean.EventBeanLogin;
+import com.erzu.quarter.utils.SharedPrefsUtil;
 import com.erzu.quarter.utils.nightmodel.ThemeManager;
 import com.erzu.quarter.view.fragment.JokesFragment;
 import com.erzu.quarter.view.fragment.OddphotosFragment;
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         menu.setMenu(view);
         //实例化控件
         initView();
-
+        left_usersname.setText(SharedPrefsUtil.getValue(this, "Account","username","游客12306"));
         //夜间模式
         ThemeManager.registerThemeChangeListener(this);
         supportActionBar = getSupportActionBar();

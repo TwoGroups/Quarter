@@ -95,11 +95,12 @@ public class ActivityLogin extends AppCompatActivity implements ILoginView {
             EventBus.getDefault().postSticky(new EventBeanLogin(bean.getData().getIcon(),bean.getData().getUsername()));
             Intent login = new Intent(ActivityLogin.this, MainActivity.class);
             startActivity(login);
-            //存储数据，在MySetting文件中存储键值对("color","red")
+            //存储数据，在MySetting文件中存储键值对
             SharedPrefsUtil.putValue(this, "Account", "phone", bean.getData().getMobile());
             SharedPrefsUtil.putValue(this, "Account", "password", bean.getData().getPassword());
             SharedPrefsUtil.putValue(this, "Account", "token", bean.getData().getToken());
-            SharedPrefsUtil.putValue(this, "Account", "nickName", bean.getData().getNickname());
+            SharedPrefsUtil.putValue(this, "Account", "username", bean.getData().getUsername());
+            SharedPrefsUtil.putValue(this, "Account", "nickname", bean.getData().getNickname());
             SharedPrefsUtil.putValue(this, "Account", "uid", bean.getData().getUid());
             finish();
         } else {

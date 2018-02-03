@@ -7,7 +7,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.model.bean.EventBeanLogin;
 import com.erzu.quarter.utils.SharedPrefsUtil;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,8 +39,10 @@ public class SetActivity extends AppCompatActivity {
         SharedPrefsUtil.putValue(this, "Account", "phone", "");
         SharedPrefsUtil.putValue(this, "Account", "password", "");
         SharedPrefsUtil.putValue(this, "Account", "token", "");
-        SharedPrefsUtil.putValue(this, "Account", "nickName", "");
+        SharedPrefsUtil.putValue(this, "Account", "nickname", "");
+        SharedPrefsUtil.putValue(this, "Account", "username", "游客12306");
         SharedPrefsUtil.putValue(this, "Account", "uid", "");
+        EventBus.getDefault().postSticky(new EventBeanLogin("","游客12306"));
         finish();
     }
 }
