@@ -10,18 +10,19 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="#03A9F4">
 
         <LinearLayout
             android:id="@+id/message_back"
             android:layout_width="wrap_content"
+            android:paddingLeft="10dp"
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
                 android:src="@mipmap/back" />
 
             <TextView
@@ -30,7 +31,7 @@
                 android:gravity="center"
                 android:text="返回"
                 android:textColor="#fff"
-                android:textSize="26sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -42,7 +43,7 @@
             android:padding="10dp"
             android:text="消息通知"
             android:textColor="#fff"
-            android:textSize="26sp" />
+            android:textSize="22sp" />
 
     </RelativeLayout>
 
@@ -55,8 +56,6 @@
         app:tabSelectedTextColor="@color/gray"
         app:tabGravity="center"
         app:tabTextColor="@color/whitee"/>
-
-
 
     <android.support.v4.view.ViewPager
         android:id="@+id/message_viewpager"

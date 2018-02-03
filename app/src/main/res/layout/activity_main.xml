@@ -5,21 +5,20 @@
     android:id="@+id/mian_relativelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.erzu.quarter.view.activity.MainActivity">
 
     <RelativeLayout
         android:id="@+id/main_head_rl"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="#03A9F4">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/main_simpledraweeview"
-            android:layout_width="70dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:padding="10dp"
+            android:padding="5dp"
             fresco:placeholderImage="@mipmap/raw_tx"
             fresco:roundAsCircle="true" />
 
@@ -32,14 +31,14 @@
             android:gravity="center"
             android:text="推荐"
             android:textColor="#fff"
-            android:textSize="28sp" />
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/main_fb"
-            android:layout_width="70dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:padding="10dp"
+            android:padding="5dp"
             android:src="@mipmap/bj_fb" />
 
     </RelativeLayout>

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity implements ISearchView,ISearchInterstedView,ISearchHistoryView {
 
-    private ImageView mBackSearch;
+    private LinearLayout mBackSearch;
     private ImageView mSearchImageSearch;
     private EditText mSearchTextSearch;
     private TextView mCancelSearch;
@@ -95,7 +96,7 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
     }
 
     private void initView() {
-        mBackSearch = (ImageView) findViewById(R.id.search_back);
+        mBackSearch = (LinearLayout) findViewById(R.id.search_back);
         mSearchImageSearch = (ImageView) findViewById(R.id.search_searchImage);
         mSearchTextSearch = (EditText) findViewById(R.id.search_searchText);
         mCancelSearch = (TextView) findViewById(R.id.search_cancel);
