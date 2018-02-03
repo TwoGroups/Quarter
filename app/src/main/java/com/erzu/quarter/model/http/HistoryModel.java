@@ -1,5 +1,6 @@
 package com.erzu.quarter.model.http;
 
+import com.erzu.quarter.model.bean.SearchBean;
 import com.erzu.quarter.model.bean.SearchHistoryBean;
 import com.erzu.quarter.model.httpfz.APIFactory;
 import com.erzu.quarter.model.httpfz.AbstractObserver;
@@ -17,9 +18,9 @@ public class HistoryModel {
         map.put("source","android");
         map.put("appVersion","101");
         map.put("keyWords","李");
-        APIFactory.getInstance().get1("/quarter/searchFriends", map, new AbstractObserver<SearchHistoryBean>() {
+        APIFactory.getInstance().get1("/quarter/searchFriends", map, new AbstractObserver<SearchBean>() {
             @Override
-            public void onSuccess(SearchHistoryBean historyBean) {
+            public void onSuccess(SearchBean historyBean) {
 
                  searchHistoryModelCallBack.onSuccess(historyBean);
             }
@@ -32,7 +33,7 @@ public class HistoryModel {
     }
 
     public  interface  SearchHistoryModelCallBack{
-        void  onSuccess(SearchHistoryBean historyBean);
+        void  onSuccess(SearchBean historyBean);
 
         void Failure(Exception e);
     }

@@ -24,7 +24,7 @@ public class SearchPresenter {
             @Override
             public void onSuccess(SearchBean searchBean) {
 
-                    iSearchView.Succeed(searchBean);
+                   iSearchView.Succeedd(searchBean);
                 //System.out.println("searchBean"+searchBean);
             }
 

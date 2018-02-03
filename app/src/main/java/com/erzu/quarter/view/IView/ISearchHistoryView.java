@@ -1,6 +1,7 @@
 package com.erzu.quarter.view.IView;
 
 import com.erzu.quarter.model.bean.JokesBean;
+import com.erzu.quarter.model.bean.SearchBean;
 import com.erzu.quarter.model.bean.SearchHistoryBean;
 
 /**
@@ -9,7 +10,7 @@ import com.erzu.quarter.model.bean.SearchHistoryBean;
 
 public interface ISearchHistoryView {
 
-    void Succeed(SearchHistoryBean searchHistoryBean);
+    void Succeed(SearchBean searchHistoryBean);
     void Failure(Exception e);
 
 }
