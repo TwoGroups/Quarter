@@ -103,11 +103,10 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
         mHistorySearch = (RecyclerView) findViewById(R.id.search_history);
         mInsterstedSearch = (RecyclerView) findViewById(R.id.search_instersted);
     }
-
     @Override
-    public void Succeed(SearchBean searchBean) {
-        searchAdapter.addData(searchBean.getData());
+    public void Succeedd(SearchBean searchBean) {
         mHistorySearch.setAdapter(searchAdapter);
+        searchAdapter.addData(searchBean.getData());
         searchAdapter.notifyDataSetChanged();
     }
 
@@ -117,7 +116,7 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
     }
 
     @Override
-    public void Succeed(SearchHistoryBean searchHistoryBean) {
+    public void Succeed(SearchBean searchHistoryBean) {
         searchHistoryAdapter.addData(searchHistoryBean.getData());
         mHistorySearch.setAdapter(searchHistoryAdapter);
         searchHistoryAdapter.notifyDataSetChanged();

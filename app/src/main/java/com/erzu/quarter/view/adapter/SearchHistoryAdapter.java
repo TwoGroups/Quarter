@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.model.bean.SearchBean;
 import com.erzu.quarter.model.bean.SearchHistoryBean;
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdapter.MyViewHodler> {
     private Context context;
-    private List<SearchHistoryBean.DataBean> list;
+    private List<SearchBean.DataBean> list;
 
     private View view;
 
@@ -31,11 +32,10 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdap
     public void  clear(){
         if (list!=null){
             list.clear();
-            notifyDataSetChanged();
         }
-
+            notifyDataSetChanged();
     }
-    public void addData(List<SearchHistoryBean.DataBean> dataBeans) {
+    public void addData(List<SearchBean.DataBean> dataBeans) {
         if (list == null) {
             list = new ArrayList<>();
         }

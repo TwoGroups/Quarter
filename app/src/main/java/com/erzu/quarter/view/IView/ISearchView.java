@@ -9,7 +9,7 @@ import com.erzu.quarter.model.bean.SearchHistoryBean;
 
 public interface ISearchView {
 
-    void Succeed(SearchBean searchBean);
+    void Succeedd(SearchBean searchBean);
     void Failure(Exception e);
 
 }

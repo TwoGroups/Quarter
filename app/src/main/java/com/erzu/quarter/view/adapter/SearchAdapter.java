@@ -31,11 +31,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHodl
 
     public void addData(List<SearchBean.DataBean> dataBeans) {
         if(list==null){
-            this.list = new ArrayList<>();
+            list = new ArrayList<>();
+        }
             list.addAll(dataBeans);
             notifyDataSetChanged();
-        }
-
     }
     public void  clear(){
         if (list!=null){

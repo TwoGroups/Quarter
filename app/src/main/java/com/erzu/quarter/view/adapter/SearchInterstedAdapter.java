@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.erzu.quarter.R;
+import com.erzu.quarter.model.bean.SearchBean;
 import com.erzu.quarter.model.bean.SearchInterstedBean;
 import com.facebook.drawee.view.SimpleDraweeView;
 

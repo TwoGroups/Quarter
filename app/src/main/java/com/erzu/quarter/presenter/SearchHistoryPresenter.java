@@ -25,7 +25,7 @@ public class SearchHistoryPresenter {
 
         historyModel.searchHistory(new HistoryModel.SearchHistoryModelCallBack() {
             @Override
-            public void onSuccess(SearchHistoryBean historyBean) {
+            public void onSuccess(SearchBean historyBean) {
                 iSearchHistoryView.Succeed(historyBean);
                 System.out.println("historyBean"+historyBean);
             }
