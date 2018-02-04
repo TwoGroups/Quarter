@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              tools:context="com.erzu.quarter.view.activity.ProductionActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.erzu.quarter.view.activity.ProductionActivity">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="我的作品页面"/>
+        android:layout_height="50dp"
+        android:background="#03A9F4"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="我的作品"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:tabGravity="center"
+        app:tabIndicatorColor="#03A9F4"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#03A9F4"
+        app:tabTextAppearance="@style/tablayout_ziti"
+        app:tabTextColor="#9A9A9A"
+       />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11" />
 
 </LinearLayout>

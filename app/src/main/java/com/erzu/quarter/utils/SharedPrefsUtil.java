@@ -97,6 +97,7 @@ public class SharedPrefsUtil {
                                int defValue) {
         SharedPreferences sp = getSharedPreferences(context, name);
         int value = sp.getInt(key, defValue);
+
         return value;
     }
 

@@ -43,13 +43,20 @@
         <!--android:layout_alignParentRight="true"-->
         <!--android:layout_centerVertical="true"-->
         <!--android:src="@mipmap/jia" />-->
-        <include
-            layout="@layout/item_menu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <!--<include-->
+            <!--layout="@layout/item_menu"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true" />-->
+        <ImageView
+            android:id="@+id/img_publish"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
 
+            android:layout_centerVertical="true"
+            android:src="@mipmap/jia" />
         <TextView
             android:id="@+id/jokes_time"
             android:layout_width="wrap_content"

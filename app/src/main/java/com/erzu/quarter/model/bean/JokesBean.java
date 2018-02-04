@@ -65,6 +65,19 @@ public class JokesBean {
         private Object shareNum;
         private int uid;
         private UserBean user;
+        private boolean isopen;
+
+        public boolean isIsopen() {
+            return isopen;
+        }
+
+        public void setIsopen(boolean isopen) {
+            this.isopen = isopen;
+        }
+
+        public DataBean(boolean isopen) {
+            this.isopen = isopen;
+        }
 
         public Object getCommentNum() {
             return commentNum;

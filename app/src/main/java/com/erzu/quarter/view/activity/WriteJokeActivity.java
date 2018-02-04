@@ -87,7 +87,7 @@ public class WriteJokeActivity extends AppCompatActivity implements IPublishView
                 break;
             case R.id.write_joke:
                 if (!TextUtils.isEmpty(jokeContent.getText().toString())) {
-                    presenter.putJokesData(jokeContent.getText().toString(), uid + "", token);
+                    presenter.putJokesData(jokeContent.getText().toString(), uid +"", token);
 //                    new Intent(this,F);
                 }
                 break;

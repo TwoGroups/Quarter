@@ -92,6 +92,12 @@ public class SearchActivity extends AppCompatActivity implements ISearchView,ISe
             }
         });
 
+        mCancelSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearchTextSearch.setText(" ");
+            }
+        });
 
     }
 

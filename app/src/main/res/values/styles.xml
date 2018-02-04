@@ -14,6 +14,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="tablayout_ziti">
+        <item name="android:textSize">17sp</item>
+    </style>
     <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
 
         <!-- 背景透明 -->
@@ -37,4 +40,5 @@
         <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
     </style>
+
 </resources>
