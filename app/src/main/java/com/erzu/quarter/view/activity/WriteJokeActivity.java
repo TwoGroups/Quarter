@@ -87,8 +87,8 @@ public class WriteJokeActivity extends AppCompatActivity implements IPublishView
                 break;
             case R.id.write_joke:
                 if (!TextUtils.isEmpty(jokeContent.getText().toString())) {
-                    presenter.putJokesData(jokeContent.getText().toString(), uid +"", token);
-//                    new Intent(this,F);
+                    presenter.putJokesData(jokeContent.getText().toString(), uid + "", token);
+                    //                    new Intent(this,F);
                 }
                 break;
             case R.id.joke_addImg:
@@ -103,7 +103,9 @@ public class WriteJokeActivity extends AppCompatActivity implements IPublishView
     public void Succeed(WriteJokeBean jokesBean) {
         if (jokesBean.getCode().equals("0")) {
             Toast.makeText(this, jokesBean.getMsg(), Toast.LENGTH_SHORT).show();
-
+            Intent intent = new Intent(WriteJokeActivity.this, PublishSuccessActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 
@@ -118,13 +120,16 @@ public class WriteJokeActivity extends AppCompatActivity implements IPublishView
             case R.id.takePhoto:
                 Toast.makeText(this, "已保存", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
+                finish();
                 break;
             case R.id.choosePhoto:
                 Toast.makeText(this, "保存失败", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
+                finish();
                 break;
             case R.id.btn_cancel:
                 dialog.dismiss();
+                finish();
         }
     }
 }

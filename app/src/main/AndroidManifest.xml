@@ -52,6 +52,7 @@
         <activity android:name=".view.activity.PublishActivity" />
          <activity android:name=".view.activity.VideoDetailsActivity"/>
         <activity android:name=".view.activity.WriteJokeActivity"/>
+        <activity android:name=".view.activity.VideoDetailsActivity"/>
         <!-- 注册SDKActivity -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"

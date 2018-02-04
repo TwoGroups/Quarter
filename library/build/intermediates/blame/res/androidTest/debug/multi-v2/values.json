@@ -16,6 +16,36 @@
             ]
         },
         {
+            "outputFile": "D:\\AndroidStudioProjects\\MyMusic\\Quarter\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\AndroidStudioProjects\\MyMusic\\Quarter\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "14",
+                        "startColumns": "4",
+                        "startOffsets": "1092",
+                        "endColumns": "42",
+                        "endOffsets": "1130"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\AndroidStudioProjects\\MyMusic\\Quarter\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\AndroidStudioProjects\\MyMusic\\Quarter\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "14",
+                        "startColumns": "4",
+                        "startOffsets": "1092",
+                        "endColumns": "42",
+                        "endOffsets": "1130"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "E:\\Quarter\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
             "map": [
                 {
@@ -46,10 +76,10 @@
             ]
         },
         {
-            "outputFile": "D:\\TwoGroups\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+            "outputFile": "G:\\erzu\\Quarter\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\TwoGroups\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "source": "G:\\erzu\\Quarter\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "from": {
                         "startLines": "14",
                         "startColumns": "4",
@@ -61,10 +91,10 @@
             ]
         },
         {
-            "outputFile": "G:\\erzu\\Quarter\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+            "outputFile": "D:\\TwoGroups\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
             "map": [
                 {
-                    "source": "G:\\erzu\\Quarter\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "source": "D:\\TwoGroups\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "from": {
                         "startLines": "14",
                         "startColumns": "4",

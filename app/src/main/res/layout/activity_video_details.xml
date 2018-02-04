@@ -19,12 +19,14 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="5dp"
+            android:layout_centerVertical="true"
             android:src="@mipmap/return_back"/>
 
         <RadioGroup
             android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/details_back"
             android:orientation="horizontal">
 
@@ -53,6 +55,7 @@
             android:layout_height="40dp"
             android:layout_alignTop="@+id/simpleDraweeView2"
             android:layout_marginStart="15dp"
+            android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/radio_group"
             android:background="@mipmap/raw_1499995160"/>
 
@@ -62,6 +65,7 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_margin="5dp"
+            android:layout_centerVertical="true"
             android:src="@mipmap/raw"
             app:roundAsCircle="true"/>
     </RelativeLayout>
@@ -69,7 +73,7 @@
     <cn.jzvd.JZVideoPlayerStandard
         android:id="@+id/video_play"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_below="@+id/video_title">
     </cn.jzvd.JZVideoPlayerStandard>
     <RelativeLayout
