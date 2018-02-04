@@ -34,8 +34,8 @@ public class JokesFragment extends Fragment implements IJokesView {
     RecyclerView jokesRv;
     Unbinder unbinder;
     private List<JokesBean.DataBean> list;
-    private JokesAdapter jokesAdapter;
-
+    //private JokesAdapter jokesAdapter;
+    private JokesAdapter jokessAdapter;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -60,8 +60,8 @@ public class JokesFragment extends Fragment implements IJokesView {
     public void Succeed(JokesBean jokesBean) {
         list = jokesBean.getData();
         //创建适配器做适配
-        jokesAdapter = new JokesAdapter(getActivity(), list);
-        jokesRv.setAdapter(jokesAdapter);
+        jokessAdapter = new JokesAdapter(getActivity(), list);
+        jokesRv.setAdapter(jokessAdapter);
 
     }
 
