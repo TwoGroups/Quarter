@@ -41,7 +41,7 @@ public class SetActivity extends AppCompatActivity {
         SharedPrefsUtil.putValue(this, "Account", "token", "");
         SharedPrefsUtil.putValue(this, "Account", "nickname", "");
         SharedPrefsUtil.putValue(this, "Account", "username", "游客12306");
-        SharedPrefsUtil.putValue(this, "Account", "uid", "");
+        SharedPrefsUtil.putValue(this, "Account", "uid", 0);
         EventBus.getDefault().postSticky(new EventBeanLogin("","游客12306"));
         finish();
     }

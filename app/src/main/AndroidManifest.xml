@@ -50,9 +50,10 @@
         <activity android:name=".view.activity.RegistActivity" />
         <activity android:name=".view.activity.FindPasswordActivity" />
         <activity android:name=".view.activity.PublishActivity" />
-         <activity android:name=".view.activity.VideoDetailsActivity"/>
-        <activity android:name=".view.activity.WriteJokeActivity"/>
-        <activity android:name=".view.activity.VideoDetailsActivity"/>
+        <activity android:name=".view.activity.VideoDetailsActivity" />
+        <activity android:name=".view.activity.WriteJokeActivity" />
+        <activity android:name=".view.activity.HotAttentionActivity" />
+
         <!-- 注册SDKActivity -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -71,6 +72,17 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name=".view.activity.TakeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+            >
+        </activity>
+        <activity android:name=".view.activity.PutondisplayActivity" />
+        <activity android:name=".view.activity.PreviewActivity" />
+        <activity android:name=".view.activity.PublishSuccessActivity"></activity>
+
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -95,15 +107,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.activity.TakeActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait">
-            >
-        </activity>
-        <activity android:name=".view.activity.PutondisplayActivity" />
-        <activity android:name=".view.activity.PreviewActivity" />
-        <activity android:name=".view.activity.PublishSuccessActivity"></activity>
     </application>
 
 </manifest>

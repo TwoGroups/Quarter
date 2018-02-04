@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.erzu.quarter.view.activity.SearchActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -43,7 +43,6 @@
             android:textSize="20dp" />
     </RelativeLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -52,9 +51,9 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
             android:background="@drawable/search_texrt"
             android:orientation="horizontal">
 
@@ -70,8 +69,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:textSize="15dp"
-                android:hint="请输入ID或者钟友名" />
+                android:hint="请输入ID或者钟友名"
+                android:textSize="15dp" />
         </LinearLayout>
 
         <TextView
@@ -82,63 +81,65 @@
             android:text="取消"
             android:textColor="#ffffff" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="20dp">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text=""
-            />
+            android:text="" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="搜索历史"
-            />
+            android:text="搜索历史" />
+
         <TextView
             android:id="@+id/search_clear"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="清空历史"
             android:gravity="right"
-            />
+            android:text="清空历史" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#868181"
-        />
+        android:background="#868181" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/search_history"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
         android:layout_height="0dp"
-        android:layout_weight="1">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_margin="10dp"
+        android:layout_weight="1"></android.support.v7.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:background="#979696"
         android:orientation="horizontal">
-     <TextView
-         android:layout_width="0dp"
-         android:layout_height="match_parent"
-         android:layout_weight="3"
-         android:text="可能感兴趣的用户"
-         android:gravity="center"
-         />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="可能感兴趣的用户" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="换一批"
             android:gravity="right"
-            />
+            android:text="换一批" />
     </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/search_instersted"
         android:layout_width="match_parent"

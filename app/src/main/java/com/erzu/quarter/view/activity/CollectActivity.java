@@ -1,5 +1,6 @@
 package com.erzu.quarter.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,12 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.erzu.quarter.R;
-import com.erzu.quarter.model.bean.RecommendBannerBean;
-import com.erzu.quarter.model.bean.RecommendVideoBean;
-import com.erzu.quarter.presenter.RecommendPresenter;
+import com.erzu.quarter.model.bean.CollectBean;
+import com.erzu.quarter.presenter.CollectPresenter;
 import com.erzu.quarter.utils.SharedPrefsUtil;
-import com.erzu.quarter.view.IView.IRecommendVeiw;
-import com.erzu.quarter.view.adapter.RecommendAdapter;
+import com.erzu.quarter.view.IView.ICollectView;
+import com.erzu.quarter.view.adapter.CollectAdapter;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CollectActivity extends AppCompatActivity implements IRecommendVeiw {
+public class CollectActivity extends AppCompatActivity implements ICollectView {
 
     @BindView(R.id.collect_back)
     LinearLayout collectBack;
@@ -30,52 +30,43 @@ public class CollectActivity extends AppCompatActivity implements IRecommendVeiw
     TextView collectDelete;
     @BindView(R.id.collect_recyclerview)
     RecyclerView collectRecyclerview;
-    String page = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collect);
-        ButterKnife.bind(this);
+        Integer uid = SharedPrefsUtil.getValue(this, "Account", "uid", 2868);
+        String token = SharedPrefsUtil.getValue(this, "Account", "token", "4DBFB1AFEE4D3FB13325C051A227CF1F");
+        if (uid == 0 || token == null) {
+            Intent intent = new Intent(this,LoginActivity.class);
+        } else {
+            setContentView(R.layout.activity_collect);
+            ButterKnife.bind(this);
+            CollectPresenter collectPresenter = new CollectPresenter(this);
+            collectPresenter.CollectGetData(uid, token);
+            collectRecyclerview.setLayoutManager(new LinearLayoutManager(this));
+        }
 
-        RecommendPresenter presenter = new RecommendPresenter(this);
-        presenter.showVideo(page);
     }
 
     @OnClick({R.id.collect_back, R.id.collect_delete})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.collect_back:
-                //点击返回按钮销毁页面
                 finish();
                 break;
             case R.id.collect_delete:
-                //点击删除按钮
                 break;
         }
     }
 
-
     @Override
-    public void onSuccess(RecommendBannerBean recommendBannerBean) {
-
+    public void onSucceed(CollectBean collectBean) {
+        CollectAdapter collectAdapter = new CollectAdapter(this, collectBean);
+        collectRecyclerview.setAdapter(collectAdapter);
     }
 
     @Override
     public void onFailure(Exception e) {
-
-    }
-
-    @Override
-    public void Success_video(RecommendVideoBean recommendVideoBean) {
-        List<RecommendVideoBean.DataBean> data = recommendVideoBean.getData();
-        collectRecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        RecommendAdapter recyclerView_adapter = new RecommendAdapter(CollectActivity.this, data);
-        collectRecyclerview.setAdapter(recyclerView_adapter);
-    }
-
-    @Override
-    public void Failure(Exception e) {
 
     }
 }
