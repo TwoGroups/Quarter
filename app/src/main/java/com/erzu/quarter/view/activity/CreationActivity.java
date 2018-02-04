@@ -30,6 +30,17 @@ public class CreationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation);
         ButterKnife.bind(this);
+        iniVideo();
+    }
+
+    private void iniVideo() {
+        creationVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CreationActivity.this, TakeActivity.class));
+            }
+        });
+
     }
 
     @OnClick(R.id.creation_fh)

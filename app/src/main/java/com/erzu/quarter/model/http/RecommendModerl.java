@@ -6,6 +6,8 @@ import com.erzu.quarter.model.bean.VideoRecommendBean;
 import com.erzu.quarter.model.httpfz.APIFactory;
 import com.erzu.quarter.model.httpfz.AbstractObserver;
 
+import java.util.HashMap;
+
 /**
  * Created by samsung on 2018/1/22.
  */
@@ -34,9 +36,14 @@ public class RecommendModerl {
 
         }
 
-    public void getVideo(final RecommendModerlCallBackVideo callBackVideo) {
-        String url = "/quarter/getVideos?source=android&appVersion=101&type=1&page=1";
-        APIFactory.getInstance().get1(url, new AbstractObserver<RecommendVideoBean>() {
+    public void getVideo(String page,final RecommendModerlCallBackVideo callBackVideo) {
+        HashMap<String,String> map=new HashMap<>();
+        map.put("source","android");
+        map.put("appVersion","101");
+        map.put("page",page);
+
+
+        APIFactory.getInstance().get1("/quarter/getVideos",map, new AbstractObserver<RecommendVideoBean>() {
             @Override
             public void onSuccess(RecommendVideoBean recommendVideoBean) {
                 callBackVideo.SuccessVideo(recommendVideoBean);

@@ -37,6 +37,7 @@ public class GreatFragment extends Fragment implements IRecommendVeiw{
     RecyclerView rec;
     Unbinder unbinder;
     List<String> list_banner;
+    String page="1";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class GreatFragment extends Fragment implements IRecommendVeiw{
         unbinder = ButterKnife.bind(this, view);
         RecommendPresenter  presenter=new RecommendPresenter(this);
         presenter.showRecomend();
-        presenter.showVideo();
+        presenter.showVideo(page);
         return view;
     }
 
@@ -75,6 +76,7 @@ public class GreatFragment extends Fragment implements IRecommendVeiw{
         rec.setLayoutManager(new LinearLayoutManager(getActivity()));
         RecommendAdapter recyclerView_adapter = new RecommendAdapter(getActivity(), data);
         rec.setAdapter(recyclerView_adapter);
+        rec.setNestedScrollingEnabled(false);
     }
 
     @Override

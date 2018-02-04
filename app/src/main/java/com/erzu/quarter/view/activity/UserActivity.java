@@ -43,14 +43,14 @@ public class UserActivity extends AppCompatActivity implements IRecommendVeiw {
     ImageView share;
     private String name;
     private String url;
-
+    String page="1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
         ButterKnife.bind(this);
         RecommendPresenter presenter = new RecommendPresenter(this);
-        presenter.showVideo();
+        presenter.showVideo(page);
         EventBus.getDefault().register(this);
         fanhui.setOnClickListener(new View.OnClickListener() {
             @Override

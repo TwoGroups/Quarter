@@ -33,8 +33,8 @@ public class RecommendPresenter {
         });
     }
 
-    public void showVideo() {
-        recommendModerl.getVideo(new RecommendModerl.RecommendModerlCallBackVideo() {
+    public void showVideo(String page) {
+        recommendModerl.getVideo(page,new RecommendModerl.RecommendModerlCallBackVideo() {
             @Override
             public void SuccessVideo(RecommendVideoBean videoRecommendBean) {
                 iRecommendVeiw.Success_video(videoRecommendBean);

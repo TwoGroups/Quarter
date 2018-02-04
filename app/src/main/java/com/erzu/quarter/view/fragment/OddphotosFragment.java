@@ -26,6 +26,7 @@ public class OddphotosFragment extends Fragment implements IRecommendVeiw{
 
     private RecyclerView mRyvOddphotos;
     List<String> list_banner;
+    String page="1";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class OddphotosFragment extends Fragment implements IRecommendVeiw{
 
         RecommendPresenter presenter=new RecommendPresenter(this);
         presenter.showRecomend();
-        presenter.showVideo();
+        presenter.showVideo(page);
 
         return view;
     }

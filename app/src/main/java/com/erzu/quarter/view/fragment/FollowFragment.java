@@ -31,14 +31,15 @@ public class FollowFragment extends Fragment implements IRecommendVeiw {
     @BindView(R.id.reciclerVeiw)
     RecyclerView reciclerVeiw;
     Unbinder unbinder;
+    String page = "1";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_follow, null);
         unbinder = ButterKnife.bind(this, view);
-        RecommendPresenter presenter=new RecommendPresenter(this);
-        presenter.showVideo();
+        RecommendPresenter presenter = new RecommendPresenter(this);
+        presenter.showVideo(page );
         return view;
     }
 
@@ -58,6 +59,7 @@ public class FollowFragment extends Fragment implements IRecommendVeiw {
         reciclerVeiw.setLayoutManager(new LinearLayoutManager(getActivity()));
         RecommendAdapter recyclerView_adapter = new RecommendAdapter(getActivity(), data);
         reciclerVeiw.setAdapter(recyclerView_adapter);
+        reciclerVeiw.setNestedScrollingEnabled(false);
     }
 
     @Override

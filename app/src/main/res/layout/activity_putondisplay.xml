@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erzu.quarter.view.activity.PutondisplayActivity">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/put_sdv"
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/raw_1500976677" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:src="@mipmap/raw_1500023215" />
+
+    <TextView
+        android:id="@+id/fenhui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:text="返回"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="预览"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        android:text="存在本地"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/put_sdv"
+        android:background="#C3E8FA">
+
+        <TextView
+            android:id="@+id/lvjing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="滤镜"
+            android:textColor="#49A9F4"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="8dp"
+            android:layout_alignBottom="@+id/lvjing"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/lvjing"
+            android:background="#29B6F6" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayout"
+        android:background="#A2DEFA">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_margin="80dp"></android.support.v7.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/but"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#29B6F6"
+            android:layout_alignParentBottom="true"
+            android:text="下一步" />
+    </RelativeLayout>
+
+</RelativeLayout>
