@@ -53,6 +53,7 @@ public class CreationActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.creation_video:
+
                 break;
             case R.id.creation_jokes:
                 Intent intent = new Intent(CreationActivity.this, WriteJokeActivity.class);
