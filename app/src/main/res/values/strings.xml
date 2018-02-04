@@ -12,4 +12,6 @@
     <string name="account">账号</string>
     <string name="phone_option">请输入手机号</string>
     <string name="has_option">已有账号?</string>
+    <string name="to_somebody">"@Ta"</string>
+    <string name="write_joke_hint">请输入内容，禁止输入色情、暴力等违反国家法律的内容，违者将以封号处理！</string>
 </resources>

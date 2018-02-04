@@ -29,36 +29,6 @@
                     }
                 }
             ]
-        },
-        {
-            "outputFile": "D:\\TwoGroups\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-            "map": [
-                {
-                    "source": "D:\\TwoGroups\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "14",
-                        "startColumns": "4",
-                        "startOffsets": "1092",
-                        "endColumns": "42",
-                        "endOffsets": "1130"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "D:\\TwoGroups\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
-            "map": [
-                {
-                    "source": "D:\\TwoGroups\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "14",
-                        "startColumns": "4",
-                        "startOffsets": "1092",
-                        "endColumns": "42",
-                        "endOffsets": "1130"
-                    }
-                }
-            ]
         }
     ]
 }

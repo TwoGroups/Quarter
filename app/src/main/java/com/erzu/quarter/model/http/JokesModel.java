@@ -18,8 +18,6 @@ public class JokesModel {
         map.put("source", "android");
         map.put("appVersion", "101");
         map.put("page", "1");
-
-
         APIFactory.getInstance().get1("/quarter/getJokes", map, new AbstractObserver<JokesBean>() {
             @Override
             public void onSuccess(JokesBean jokesBean) {

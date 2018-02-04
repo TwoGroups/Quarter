@@ -10,14 +10,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
     }
-    productFlavors{
-        xiaomi{}
-        baidu{}
-        tengxun{}
-        huawei{}
+    productFlavors {
+        xiaomi {}
+        baidu {}
+        tengxun {}
+        huawei {}
     }
-    productFlavors.all{
-        flavor->flavor.manifestPlaceholders=[UMENG_CHANNEL_VALUE: name]
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
     buildTypes {
         release {
