@@ -32,6 +32,7 @@ public class NearVideoFragment extends Fragment implements IVideoView {
     @BindView(R.id.frag_near_view)
     RecyclerView fragNearView;
     Unbinder unbinder;
+
     private HotVideoAdapter adapter;
     private VideoPresenter presenter;
     private int size = 1;
