@@ -4,11 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.erzu.quarter.view.activity.AttentionActivity">
 
-    <TextView
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="#03A9F4">
+
+<ImageView
+    android:id="@+id/attention_fh"
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:layout_marginLeft="5dp"
+    android:layout_centerVertical="true"
+    android:src="@mipmap/back"
+    />
+      <TextView
+          android:id="@+id/attention_back"
+          android:layout_toRightOf="@+id/attention_fh"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="返回"
+          android:layout_centerVertical="true"
+          android:textSize="20sp"
+          android:textColor="#fff"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="我的关注"
+          android:textSize="22sp"
+          android:layout_centerInParent="true"
+          android:textColor="#fff"
+          />
+      <TextView
+          android:id="@+id/attention_hot"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="热门关注"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:textSize="20sp"
+          android:textColor="#fff"
+          android:layout_marginRight="5dp"
+          />
+  </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/attention_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="我的关注页面"/>
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>
