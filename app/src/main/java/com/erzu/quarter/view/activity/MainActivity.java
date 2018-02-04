@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.main_fb:
                 if (indexes == 3) {
                     //点击跳转到发表页面
-                    Intent intent = new Intent(MainActivity.this, PublishActivity.class);
+                    Intent intent = new Intent(MainActivity.this, WriteJokeActivity.class);
                     startActivity(intent);
                 } else {
                     //点击跳转到创作页面

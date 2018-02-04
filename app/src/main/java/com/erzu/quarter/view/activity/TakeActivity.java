@@ -148,7 +148,7 @@ public class TakeActivity extends AppCompatActivity {
                     parameters.setPreviewFrameRate(5); // 每秒5帧
                     parameters.setPictureFormat(ImageFormat.JPEG);// 设置照片的输出格式
                     parameters.set("jpeg-quality", 85);// 照片质量
-                    camera.setParameters(parameters);
+//                    camera.setParameters(parameters);
                     camera.setPreviewDisplay(holder);
                     isPreview = true;
                     camera.startPreview();
