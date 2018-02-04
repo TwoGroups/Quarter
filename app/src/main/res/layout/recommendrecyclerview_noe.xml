@@ -31,7 +31,7 @@
 
     <com.erzu.quarter.utils.CustomerView
         android:id="@+id/yuan"
-        android:layout_width="@dimen/sdv_layout_width"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/sdv_layout_height"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/sdv_layout_marginRight"

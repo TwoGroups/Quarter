@@ -80,27 +80,9 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
         jcVideoPlayerStandard.heightRatio = 3;
 
 
-        holder.yuan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Animator animator3 = AnimatorInflater.loadAnimator(context, R.animator.rotation);
-                animator3.setTarget(holder.yuan);
-                animator3.start();
 
-                showPopwindow();
-            }
 
-            private void showPopwindow() {
-                View contentView = LayoutInflater.from(context).inflate(R.layout.popwindows, null);
-//                //处理popWindow 显示内容
-//                handleLogic(contentView);
-                //创建并显示popWindow
-                CustomPopWindow mCustomPopWindow = new CustomPopWindow.PopupWindowBuilder(context)
-                        .setView(contentView)
-                        .create()
-                        .showAsDropDown(contentView, 500, 700);
-            }
-        });
+
         holder.but_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,7 +144,6 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
         private final TextView commentB;
         private final TextView textView;
         private final TextView timer;
-        private final SimpleDraweeView yuan;
         private final SimpleDraweeView sdv;
         private final TextView name;
         private final RadioButton but_share;
@@ -176,7 +157,6 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyHo
             textView = (TextView) itemView.findViewById(R.id.title_name);
             commentA = (TextView) itemView.findViewById(R.id.commentA);
             commentB = (TextView) itemView.findViewById(R.id.commentB);
-            yuan = (SimpleDraweeView) itemView.findViewById(R.id.yuan);
             sdv = (SimpleDraweeView) itemView.findViewById(R.id.sdv);
             but_share = (RadioButton)itemView.findViewById(R.id.btn3);
 

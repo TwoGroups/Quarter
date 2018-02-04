@@ -9,7 +9,7 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/put_sdv"
         android:layout_width="match_parent"
-        android:layout_height="530dp"
+        android:layout_height="230dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@mipmap/raw_1500976677" />

@@ -4,7 +4,7 @@
     <dimen name="Size">20dp</dimen>
     <dimen name="layout_marginLeft">50dp</dimen>
     <dimen name="sdv_layout_width">40dp</dimen>
-    <dimen name="sdv_layout_height">40dp</dimen>
+    <dimen name="sdv_layout_height">30dp</dimen>
     <dimen name="sdv_layout_marginRight">20dp</dimen>
     <dimen name="jiecao_height">300dp</dimen>
     <dimen name="Radio_width">40dp</dimen>

@@ -9,20 +9,22 @@
     <ImageView
         android:id="@+id/rew_img"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="350dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@mipmap/raw_1501057730" />
 
     <ImageView
         android:id="@+id/img_preview"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="124dp"
         android:background="@mipmap/raw_1500978266" />
 
     <Button
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_preview"
         android:layout_centerHorizontal="true"
@@ -41,20 +43,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:text="同步分享至-----------"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:text="同步分享至----"
             android:textColor="#fff"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:id="@+id/textView5" />
 
         <ImageView
             android:id="@+id/kongjian"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="23dp"
-            android:layout_toEndOf="@+id/textView5"
+       android:layout_alignParentRight="true"
+            android:layout_marginRight="100dp"
+
             android:src="@mipmap/raw_1500022686" />
 
         <TextView
@@ -62,22 +64,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="QQ空间"
+            android:layout_alignParentRight="true"
             android:textColor="#fff"
+            android:layout_marginRight="80dp"
             android:textSize="20dp"
-            android:layout_marginLeft="190dp" />
+             />
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="215dp"
+            android:layout_marginRight="180dp"
             android:src="@mipmap/raw_1500022317"
             android:id="@+id/imageView3" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/imageView3"
+            android:layout_marginLeft="130dp"
             android:layout_below="@+id/imageView3"
             android:text="朋友圈"
             android:textColor="#fff"
@@ -87,8 +91,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="120dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
             android:text="-------------"
             android:textColor="#fff" />
     </RelativeLayout>
