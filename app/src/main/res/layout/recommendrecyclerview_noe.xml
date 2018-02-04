@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:padding="20dp">
 
@@ -29,7 +29,7 @@
         android:layout_below="@id/name"
         android:layout_marginLeft="50dp" />
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <com.erzu.quarter.utils.CustomerView
         android:id="@+id/yuan"
         android:layout_width="@dimen/sdv_layout_width"
         android:layout_height="@dimen/sdv_layout_height"
@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/title_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/sdv"
         android:text="天气真没好"
@@ -62,8 +62,8 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/yuan"
         android:layout_alignTop="@+id/videoplayer"
-        android:layout_marginEnd="23dp"
-        android:layout_marginTop="@dimen/Size"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <RadioButton
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="1563"
             android:textColor="#fff"
-            android:textSize="18dp" />
+            android:textSize="@dimen/textSize" />
 
         <RadioButton
             android:id="@+id/btn2"
@@ -90,7 +90,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+
             android:text="655"
             android:textColor="@color/titleBlue"
             android:textSize="@dimen/textSize" />
@@ -105,10 +105,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
             android:text="503"
             android:textColor="#fff"
-            android:textSize="18dp" />
+            android:textSize="@dimen/textSize" />
 
         <RadioButton
             android:id="@+id/btn4"
