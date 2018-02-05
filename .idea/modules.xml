@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Quarter.iml" filepath="$PROJECT_DIR$/Quarter.iml" />
       <module fileurl="file://D:\TwoGroups\Quarter.iml" filepath="D:\TwoGroups\Quarter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TwoGroups.iml" filepath="$PROJECT_DIR$/TwoGroups.iml" />
       <module fileurl="file://D:\AndroidCode\Quarter\TwoGroups.iml" filepath="D:\AndroidCode\Quarter\TwoGroups.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />

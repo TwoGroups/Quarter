@@ -1,6 +1,5 @@
 package com.erzu.quarter.view.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,8 +14,6 @@ import com.erzu.quarter.presenter.CollectPresenter;
 import com.erzu.quarter.utils.SharedPrefsUtil;
 import com.erzu.quarter.view.IView.ICollectView;
 import com.erzu.quarter.view.adapter.CollectAdapter;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,20 +33,18 @@ public class CollectActivity extends AppCompatActivity implements ICollectView {
         super.onCreate(savedInstanceState);
         Integer uid = SharedPrefsUtil.getValue(this, "Account", "uid", 2868);
         String token = SharedPrefsUtil.getValue(this, "Account", "token", "4DBFB1AFEE4D3FB13325C051A227CF1F");
-        if (uid == 0 || token == null) {
-            Intent intent = new Intent(this,LoginActivity.class);
-        } else {
-            setContentView(R.layout.activity_collect);
-            ButterKnife.bind(this);
-            CollectPresenter collectPresenter = new CollectPresenter(this);
-            collectPresenter.CollectGetData(uid, token);
-            collectRecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        }
+        setContentView(R.layout.activity_collect);
+        ButterKnife.bind(this);
+        CollectPresenter collectPresenter = new CollectPresenter(this);
+        collectPresenter.CollectGetData(uid, token);
+        collectRecyclerview.setLayoutManager(new LinearLayoutManager(this));
 
     }
 
     @OnClick({R.id.collect_back, R.id.collect_delete})
     public void onViewClicked(View view) {
+
+
         switch (view.getId()) {
             case R.id.collect_back:
                 finish();
